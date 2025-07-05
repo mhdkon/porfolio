@@ -1,4 +1,4 @@
-/* Reset y estilos base */
+/* estilos base */
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +23,32 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* TITULOS Y TEXTOS */
+.titulo {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #38bdf8;
+}
+
+.subtitulo {
+  font-size: 2rem;
+  color: #7dd3fc;
+  text-align: center;
+  margin-top: 2.5rem;
+  text-shadow: 0 0 6px #7dd3fc;
+}
+
+.parrafo {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
 
 nav {
   display: flex;
@@ -92,74 +118,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Sección Hero */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.hero-content {
-  flex: 1;
-  padding-right: 2rem;
-}
-
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 5px solid #2563eb;
-  transition: all 0.3s ease;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #f8fafc;
-}
-
-.highlight {
-  color: #60a5fa;
-  font-weight: 700;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #93c5fd;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #2563eb;
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-}
-
-.cta-button:hover {
-  background-color: #1e40af;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
-}
 
 /* Sección Proyectos */
 .proje {
@@ -175,24 +133,306 @@ h1 {
   color: #f8fafc;
 }
 
+
+/* Contenedor de la imagen de perfil */
+.hero-image {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2rem;
+  position: relative;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+  transition: all 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+  overflow: hidden;
+}
+
+/* Imagen dentro del contenedor */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(10%) contrast(110%);
+  transition: all 0.4s ease;
+}
+
+/* Efecto hover sobre la imagen*/
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.6);
+}
+
+.hero-image:hover img {
+  filter: grayscale(0%) contrast(120%);
+}
+
+/* Efecto flotante */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Efecto borde animado */
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 3px solid transparent;
+  border-top-color: #0ea5e9;
+  border-right-color: #0ea5e9;
+  border-radius: 50%;
+  animation: spin 8s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+
+/* Sección Hero  */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f172a;
+  color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+  padding: 0 5%;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.hero-content {
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #f8fafc;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #38bdf8;
+  width: 0;
+  animation: typing 2s steps(20, end) forwards, blink 0.8s step-end infinite;
+}
+
+.highlight {
+  color: #38bdf8;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #38bdf8;
+  z-index: -1;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.highlight:hover::after {
+  height: 6px;
+  background: #0ea5e9;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  color: #94a3b8;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in 2s forwards;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+  transform: translateY(-10px);
+  opacity: 0;
+  animation: dropIn 1s ease-out 3s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(14, 165, 233, 0.5);
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+}
+
+/* Animaciones */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #38bdf8; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes dropIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+/* Sección general */
 .conocimientos-section {
   margin-bottom: 3rem;
-}
-
-.conocimientos-section h3 {
+  padding: 4rem 2rem;
+  background: #0f172a;
+  border-radius: 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #f8fafc;
-  font-size: 1.5rem;
 }
 
+/* el titulo*/
+.conocimientos-section h3 {
+  font-size: 2.2rem;
+  color: #f8fafc;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Contenedor flexible */
 .conocimientos-contenedor {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-  margin-bottom: 3rem;
 }
+
+/* Estilo de cada tarjeta */
+.tecnologia {
+  width: 160px;
+  height: 160px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación al pasar el mouse */
+.tecnologia:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Iconos */
+.tecnologia i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos por cada tecnologia */
+.tecnologia:nth-child(1) {
+  background-color: #e44d26; /* HTML5 */
+}
+
+.tecnologia:nth-child(1) i {
+  color: #fff;
+}
+
+.tecnologia:nth-child(2) {
+  background-color: #264de4; /* CSS3 */
+}
+
+.tecnologia:nth-child(2) i {
+  color: #fff;
+}
+
+.tecnologia:nth-child(3) {
+  background-color: #f7df1e; /* JavaScript */
+  color: #000;
+}
+
+.tecnologia:nth-child(3) i {
+  color: #000;
+}
+
+.tecnologia:nth-child(4) {
+  background-color: #f1502f; /* Git */
+}
+
+.tecnologia:nth-child(4) i {
+  color: #fff;
+}
+
+/* estilo para tecnologia */
 
 .tecnologia {
   display: flex;
@@ -230,51 +470,129 @@ h1 {
 }
 
 /* Sección Sobre Mí */
-.ajusta {
-  padding: 5rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
-.ajusta .contenido {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.ajusta h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #f8fafc;
-}
-
-.ajusta p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-
-.habilidades {
+.seccion-sobre-mi {
+  padding: 4rem 2rem;
+  background-color: #1e293b;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
 }
 
+.contenido-sobre-mi {
+  max-width: 800px;
+  background-color: #0f172a;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.1);
+  opacity: 0;
+  animation: aparecer 1s ease-out forwards;
+}
+
+
+/* === ANIMACIONES === */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animado {
+  opacity: 0;
+  animation: aparecer 1s ease-out forwards;
+}
+
+.retraso-1 {
+  animation-delay: 0.3s;
+}
+.retraso-2 {
+  animation-delay: 0.6s;
+}
+.retraso-3 {
+  animation-delay: 0.9s;
+}
+.retraso-4 {
+  animation-delay: 1.2s;
+}
+
+/* Sección general */
+.seccion-habilidades {
+  padding: 4rem 2rem;
+  background-color: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+}
+
+/* Título */
+.titulo-habilidades {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #38bdf8;
+  text-shadow: 0 0 10px #38bdf8;
+}
+
+/* Grid de habilidades */
+.contenedor-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Tarjeta individual */
 .habilidad {
-  background-color: #2563eb;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  background-color: #1e293b;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100%;
+  max-width: 180px;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.habilidad:hover {
-  background-color: #1e40af;
-  transform: translateY(-3px);
+/* Emoji más grande */
+.habilidad::first-letter {
+  font-size: 2rem;
 }
+
+/* Animaciones */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animada {
+  animation: aparecer 0.8s forwards ease-out;
+}
+
+.retraso-1 { animation-delay: 0.2s; }
+.retraso-2 { animation-delay: 0.4s; }
+.retraso-3 { animation-delay: 0.6s; }
+.retraso-4 { animation-delay: 0.8s; }
+.retraso-5 { animation-delay: 1s; }
+
+/* Hover effect */
+.habilidad:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 6px 30px rgba(56, 189, 248, 0.25);
+}
+
+
+
+
 
 /* Sección Contacto */
 .contact {
@@ -418,7 +736,65 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* para que sea responsive en todas las pantallas*/
+
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    animation: typing 1.5s steps(20, end) forwards, blink 0.8s step-end infinite;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-image {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    width: 150px;
+    height: 150px;
+    border-width: 3px;
+  }
+}
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
@@ -495,5 +871,36 @@ footer {
   
   .tecnologia i {
     font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contenido-sobre-mi {
+    padding: 2rem 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .parrafo {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .habilidad {
+    font-size: 1rem;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .titulo-habilidades {
+    font-size: 2rem;
   }
 }

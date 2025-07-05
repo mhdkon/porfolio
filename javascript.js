@@ -16,19 +16,34 @@ document.querySelectorAll('.navegation a').forEach(link => {
 });
 
 // para ser efecto el hacer click
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+
+// Seleccionamos todos los enlaces con href que empiezan con "#"
+const anchors = document.querySelectorAll('a[href^="#"]');
+
+// Iteramos sobre cada uno de esos enlaces
+anchors.forEach(function(anchor) {
+  
+  // Añadimos un evento de "click" a cada enlace
   anchor.addEventListener('click', function(e) {
+    
+    // Prevenimos el comportamiento por defecto del enlace (ir al destino de inmediato)
     e.preventDefault();
     
-    const targetId = this.getAttribute('href');
+    // Obtenemos el valor del atributo href (el ID del destino)
+    const targetId = anchor.getAttribute('href');
+    
+    // Encontramos el elemento al que queremos hacer scroll
     const targetElement = document.querySelector(targetId);
     
+    // Hacemos el scroll con un pequeño ajuste de 80px hacia arriba
     window.scrollTo({
       top: targetElement.offsetTop - 80,
-      behavior: 'smooth'
+      behavior: 'smooth'  // Esto hace que el scroll sea suave
     });
   });
 });
+
 
 
 
