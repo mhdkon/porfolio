@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Fuentes de Google y Animate.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon.png" type="">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-
-
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
     <link rel="stylesheet" href="estilo.css">
+
+    <!-- Script para JavaScript -->
     <script defer src="javascript.js"></script>
-      <link rel="icon" type="image/png" href="favicon.png">
-     <title>Mi Portafolio</title>
+
+    <title>Mi Portafolio</title>
+
+    <!-- Estilo para el desplazamiento suave -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <!-- este es el menu de navegation con imagenes -->
-
-          <div class="logo">MiPortafolio</div>
-                <ul class="navegation">
+            <!-- Logo y menú de navegación -->
+            <div class="logo">MiPortafolio</div>
+            <ul class="navegation">
                 <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="#proyectos"><i class="fas fa-code"></i> Proyectos</a></li>
                 <li><a href="#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
                 <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-                </ul>
-<!-- Este es la bara de menu -->
-
+            </ul>
+            <!-- Barra de menú -->
             <div class="barra">
                 <div class="linea1"></div>
                 <div class="linea2"></div>
@@ -38,11 +44,11 @@
             </div>
         </nav>
     </header>
-<!-- Este es el menu principal-->
 
+    <!-- Sección principal (Inicio) -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>   Hola, soy <span class="highlight">MOHAMED KONE</span></h1>
+            <h1>Hola, soy <span class="highlight">MOHAMED KONE</span></h1>
             <p class="subtitle">Desarrollador Web</p>
             <a href="#proyectos" class="cta-button">Ver mis proyectos</a>
         </div>
@@ -50,72 +56,63 @@
             <img src="img/imgp.jpg" alt="Foto de perfil">
         </div>
     </section>
-<section id="proyectos" class="proje">
-    <h2>Mis Proyectos</h2>
-    
-    <!-- Sección de mi conocimiento -->
-    <div class="conocimientos-section">
-        <h3>Tecnologías que domino</h3>
-        <div class="conocimientos-contenedor">
-            <div class="tecnologia">
-                <i class="fab fa-html5"></i>
-                <span>HTML5</span>
-            </div>
-            <div class="tecnologia">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
-            </div>
-            <div class="tecnologia">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="tecnologia">
-                <i class="fab fa-git-alt"></i>
-                <span>Git</span>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="proje">
+        <h2>Mis Proyectos</h2>
+        <div class="conocimientos-section">
+            <h3>Tecnologías que domino</h3>
+            <div class="conocimientos-contenedor">
+                <div class="tecnologia">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tecnologia">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tecnologia">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tecnologia">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
             </div>
         </div>
-    </div>
-    
-    
-    </div>
-</section>
     </section>
-<!-- Sobre mi -->
- <section class="seccion-sobre-mi">
-  <div class="contenido-sobre-mi">
-    <h2 class="titulo animado">Sobre mí</h2>
 
-    <p class="parrafo animado retraso-1">
-      Soy un desarrollador web junior con muchas ganas de crecer en este mundo. Me formé en un bootcam.
-    </p>
-
-    <p class="parrafo animado retraso-2">
-      Me encanta crear sitios web que no solo funcionen bien, sino que también se vean atractivos. Disfruto mucho el desarrollo frontend y trabajar con diseño limpio y funcional.
-    </p>
-
-    <p class="parrafo animado retraso-3">
-      Fuera del desarrollo, Me gusta jugar al fútbol en mi tiempo libre, algo que me ayuda a desconectar, inspirarme y mantener un buen equilibrio entre lo personal y lo profesional.
-    </p>
-
-    <h3 class="subtitulo animado retraso-4">Mis habilidades técnicas</h3>
-  </div>
-</section>
-
-    <!-- Sección de Habilidades -->
-<section class="seccion-habilidades">
-            <h2 class="titulo-habilidades">Mis habilidades técnicas</h2>
-            <div class="contenedor-habilidades">
-                <div class="habilidad animada retraso-1">🔥 <span>HTML5</span></div>
-                <div class="habilidad animada retraso-2">🎨 <span>CSS3</span></div>
-                <div class="habilidad animada retraso-3">⚡ <span>JavaScript</span></div>
-                <div class="habilidad animada retraso-4">🔧 <span>Git</span></div>
-                <div class="habilidad animada retraso-5">📱 <span>Responsive Design</span></div>
-            </div>
-            </section>
-
-</section>
+    <!-- Sección "Sobre mí" -->
+    <section id="sobre-mi" class="seccion-sobre-mi">
+        <div class="contenido-sobre-mi">
+            <h2 class="titulo animado">Sobre mí</h2>
+            <p class="parrafo animado retraso-1">
+                Soy un desarrollador web junior con muchas ganas de crecer en este mundo. Me formé en un bootcam.
+            </p>
+            <p class="parrafo animado retraso-2">
+                Me encanta crear sitios web que no solo funcionen bien, sino que también se vean atractivos. Disfruto mucho el desarrollo frontend y trabajar con diseño limpio y funcional.
+            </p>
+            <p class="parrafo animado retraso-3">
+                Fuera del desarrollo, Me gusta jugar al fútbol en mi tiempo libre, algo que me ayuda a desconectar, inspirarme y mantener un buen equilibrio entre lo personal y lo profesional.
+            </p>
+            <h3 class="subtitulo animado retraso-4">Mis habilidades técnicas</h3>
+        </div>
     </section>
-<!-- mi contactos en redes sociales -->
+
+    <!-- Sección de habilidades -->
+    <section class="seccion-habilidades">
+        <h2 class="titulo-habilidades">Mis habilidades técnicas</h2>
+        <div class="contenedor-habilidades">
+            <div class="habilidad animada retraso-1">🔥 <span>HTML5</span></div>
+            <div class="habilidad animada retraso-2">🎨 <span>CSS3</span></div>
+            <div class="habilidad animada retraso-3">⚡ <span>JavaScript</span></div>
+            <div class="habilidad animada retraso-4">🔧 <span>Git</span></div>
+            <div class="habilidad animada retraso-5">📱 <span>Responsive Design</span></div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
     <section id="contacto" class="contact">
         <h2>Contacto</h2>
         <form class="contact-form">
@@ -125,23 +122,19 @@
             <button type="submit">Enviar</button>
         </form>
         <div class="redes">
-                    <a href="https://github.com/mhdkon" target="_blank">
-            <i class="fab fa-github"></i>
+            <a href="https://github.com/mhdkon" target="_blank">
+                <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank">
-            <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin"></i>
             </a>
             <a href="https://www.instagram.com/vikis_kone/" target="_blank">
-            <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram"></i>
             </a>
-                        <a href="https://wa.me/34632410434" target="_blank">
-            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/34632410434" target="_blank">
+                <i class="fab fa-whatsapp"></i>
             </a>
-
-
         </div>
     </section>
-
-
 </body>
 </html>
