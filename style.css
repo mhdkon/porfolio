@@ -1,4 +1,4 @@
-/*  ESTILOS BASE */
+/* estilos base */
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +11,9 @@ body {
   color: #f8fafc;
   line-height: 1.6;
   padding-top: 80px;
-  overflow-x: hidden;
 }
 
-/*  HEADER Y NAVEGACIÓN */
+/* Header y navegación */
 header {
   background-color: rgba(15, 23, 42, 0.9);
   position: fixed;
@@ -23,13 +22,33 @@ header {
   z-index: 1000;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
 }
 
-header.scrolled {
-  padding: 0.5rem 0;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+/* TITULOS Y TEXTOS */
+.titulo {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #38bdf8;
 }
+
+.subtitulo {
+  font-size: 2rem;
+  color: #7dd3fc;
+  text-align: center;
+  margin-top: 2.5rem;
+  text-shadow: 0 0 6px #7dd3fc;
+}
+
+.parrafo {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
 
 nav {
   display: flex;
@@ -46,12 +65,10 @@ nav {
   color: #f8fafc;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
 .logo:hover {
   color: #60a5fa;
-  transform: scale(1.05);
 }
 
 .navegation {
@@ -74,24 +91,7 @@ nav {
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.navegation li a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
-  transition: all 0.5s ease;
-}
-
-.navegation li a:hover::before {
-  left: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .navegation li a:hover {
@@ -103,17 +103,11 @@ nav {
 
 .navegation li a i {
   font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.navegation li a:hover i {
-  transform: rotate(15deg) scale(1.2);
 }
 
 .barra {
   display: none;
   cursor: pointer;
-  z-index: 1001;
 }
 
 .barra div {
@@ -124,7 +118,87 @@ nav {
   transition: all 0.3s ease;
 }
 
-/*  SECCIÓN HERO  */
+
+/* Sección Proyectos */
+.proje {
+  padding: 5rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.proje h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #f8fafc;
+}
+
+
+/* Contenedor de la imagen de perfil */
+.hero-image {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2rem;
+  position: relative;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+  transition: all 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+  overflow: hidden;
+}
+
+/* Imagen dentro del contenedor */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(10%) contrast(110%);
+  transition: all 0.4s ease;
+}
+
+/* Efecto hover sobre la imagen*/
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.6);
+}
+
+.hero-image:hover img {
+  filter: grayscale(0%) contrast(120%);
+}
+
+/* Efecto flotante */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Efecto borde animado */
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 3px solid transparent;
+  border-top-color: #0ea5e9;
+  border-right-color: #0ea5e9;
+  border-radius: 50%;
+  animation: spin 8s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+
+/* Sección Hero  */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -137,17 +211,6 @@ nav {
   padding: 0 5%;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(transparent, #0f172a);
-  z-index: 1;
 }
 
 .hero-background {
@@ -230,23 +293,6 @@ nav {
   opacity: 0;
   animation: dropIn 1s ease-out 3s forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.5s ease;
-}
-
-.cta-button:hover::before {
-  left: 100%;
 }
 
 .cta-button:hover {
@@ -255,95 +301,46 @@ nav {
   background: linear-gradient(135deg, #0ea5e9, #38bdf8);
 }
 
-/* Contenedor de la imagen de perfil */
-.hero-image {
-  width: 220px;
-  height: 220px;
-  margin: 0 auto 2rem;
-  position: relative;
-  border-radius: 50%;
-  border: 4px solid #38bdf8;
-  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
-  transition: all 0.4s ease;
-  animation: float 6s ease-in-out infinite;
-  overflow: hidden;
+/* Animaciones */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-/* Imagen dentro del contenedor */
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: grayscale(10%) contrast(110%);
-  transition: all 0.4s ease;
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #38bdf8; }
 }
 
-/* Efecto hover sobre la imagen*/
-.hero-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.6);
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-.hero-image:hover img {
-  filter: grayscale(0%) contrast(120%);
+@keyframes dropIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Efecto flotante */
-@keyframes float {
-  0%, 100% {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-15px);
-  }
 }
 
-/* Efecto borde animado */
-.hero-image::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border: 3px solid transparent;
-  border-top-color: #0ea5e9;
-  border-right-color: #0ea5e9;
-  border-radius: 50%;
-  animation: spin 8s linear infinite;
-  z-index: 1;
-  pointer-events: none;
-}
 
-/* ===== SECCIÓN PROYECTOS ===== */
-.proje {
-  padding: 5rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
-.proje h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #f8fafc;
-  position: relative;
-}
 
-.proje h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, #38bdf8, transparent);
-  border-radius: 3px;
-}
 
-/* Sección de conocimientos */
+
+
+/* Sección general */
 .conocimientos-section {
   margin-bottom: 3rem;
   padding: 4rem 2rem;
@@ -351,41 +348,26 @@ nav {
   border-radius: 2rem;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.conocimientos-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
-  z-index: 0;
-}
-
+/* el titulo*/
 .conocimientos-section h3 {
   font-size: 2.2rem;
   color: #f8fafc;
   margin-bottom: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  position: relative;
-  z-index: 1;
 }
 
+/* Contenedor flexible */
 .conocimientos-contenedor {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  position: relative;
-  z-index: 1;
 }
 
+/* Estilo de cada tarjeta */
 .tecnologia {
   width: 160px;
   height: 160px;
@@ -402,44 +384,21 @@ nav {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 1rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
 }
 
-.tecnologia::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-.tecnologia:hover::before {
-  transform: translateY(0);
-}
-
+/* Animación al pasar el mouse */
 .tecnologia:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 }
 
+/* Iconos */
 .tecnologia i {
   font-size: 3rem;
   margin-bottom: 1rem;
-  transition: transform 0.3s ease;
 }
 
-.tecnologia:hover i {
-  transform: scale(1.2) rotate(10deg);
-}
-
-/* Colores para cada tecnología */
+/* Estilos por cada tecnologia */
 .tecnologia:nth-child(1) {
   background-color: #e44d26; /* HTML5 */
 }
@@ -473,15 +432,51 @@ nav {
   color: #fff;
 }
 
-/* SECCIÓN SOBRE MÍ  */
+/* estilo para tecnologia */
+
+.tecnologia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(30, 41, 59, 0.7);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tecnologia:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.tecnologia i {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.fa-html5 { color: #E44D26; }
+.fa-css3-alt { color: #264DE4; }
+.fa-js { color: #F0DB4F; }
+.fa-git-alt { color: #F34F29; }
+
+.proyecto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Sección Sobre Mí */
+
 .seccion-sobre-mi {
   padding: 4rem 2rem;
   background-color: #1e293b;
   display: flex;
   justify-content: center;
-  position: relative;
 }
-
 
 .contenido-sobre-mi {
   max-width: 800px;
@@ -491,88 +486,64 @@ nav {
   box-shadow: 0 0 25px rgba(56, 189, 248, 0.1);
   opacity: 0;
   animation: aparecer 1s ease-out forwards;
-  position: relative;
-  z-index: 1;
 }
 
-.titulo {
-  font-size: 2.5rem;
-  color: #38bdf8;
-  text-align: center;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px #38bdf8;
-  position: relative;
+
+/* === ANIMACIONES === */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.titulo::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #38bdf8;
-  border-radius: 3px;
+.animado {
+  opacity: 0;
+  animation: aparecer 1s ease-out forwards;
 }
 
-.subtitulo {
-  font-size: 2rem;
-  color: #7dd3fc;
-  text-align: center;
-  margin-top: 2.5rem;
-  text-shadow: 0 0 6px #7dd3fc;
+.retraso-1 {
+  animation-delay: 0.3s;
+}
+.retraso-2 {
+  animation-delay: 0.6s;
+}
+.retraso-3 {
+  animation-delay: 0.9s;
+}
+.retraso-4 {
+  animation-delay: 1.2s;
 }
 
-.parrafo {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #e2e8f0;
-  margin-bottom: 1.5rem;
-  text-align: justify;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.parrafo::before {
-  content: '»';
-  position: absolute;
-  left: 0;
-  color: #38bdf8;
-}
-
-/*  SECCIÓN HABILIDADES  */
+/* Sección general */
 .seccion-habilidades {
   padding: 4rem 2rem;
   background-color: #0f172a;
   color: #f8fafc;
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-
-
+/* Título */
 .titulo-habilidades {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: #38bdf8;
   text-shadow: 0 0 10px #38bdf8;
-  position: relative;
-  z-index: 1;
 }
 
+/* Grid de habilidades */
 .contenedor-habilidades {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 2rem;
   justify-items: center;
-  position: relative;
-  z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
+/* Tarjeta individual */
 .habilidad {
   background-color: #1e293b;
   border-radius: 1rem;
@@ -588,30 +559,19 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.habilidad::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.habilidad:hover::before {
-  transform: scaleX(1);
-}
-
+/* Emoji más grande */
 .habilidad::first-letter {
   font-size: 2rem;
-  margin-right: 5px;
+}
+
+/* Animaciones */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animada {
@@ -624,37 +584,28 @@ nav {
 .retraso-4 { animation-delay: 0.8s; }
 .retraso-5 { animation-delay: 1s; }
 
+/* Hover effect */
 .habilidad:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0 6px 30px rgba(56, 189, 248, 0.25);
 }
 
-/*  SECCIÓN CONTACTO */
+
+
+
+
+/* Sección Contacto */
 .contact {
   padding: 5rem 5%;
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
-  position: relative;
-}
-
-.contact::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-  z-index: 0;
 }
 
 .contact h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #f8fafc;
-  position: relative;
-  z-index: 1;
 }
 
 .contact-form {
@@ -667,9 +618,6 @@ nav {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(10px);
 }
 
 .contact-form input,
@@ -681,14 +629,6 @@ nav {
   background: rgba(15, 23, 42, 0.5);
   color: #f8fafc;
   font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #38bdf8;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
 
 .contact-form textarea {
@@ -705,29 +645,11 @@ nav {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-form button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.5s ease;
-}
-
-.contact-form button:hover::before {
-  left: 100%;
 }
 
 .contact-form button:hover {
   background-color: #1e40af;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4);
 }
 
 .redes {
@@ -735,9 +657,6 @@ nav {
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  position: relative;
-  z-index: 1;
-  margin-top: 2rem;
 }
 
 .redes a {
@@ -784,7 +703,7 @@ nav {
 
 /* Colores personalizados por red social */
 .redes .fa-github:hover {
-  background-color: #171515;
+  background-color:  #171515;;
 }
 
 .redes .fa-linkedin:hover {
@@ -807,105 +726,53 @@ nav {
 
 
 
-/* ===== ANIMACIONES ===== */
-@keyframes typing {
-  from {
-     width: 0 }
-  to { 
-    width: 100% }
+/* Footer */
+footer {
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes blink {
-  from, to {
-     border-color: transparent }
-  50% { 
-     border-color: #38bdf8; }
-}
+/* para que sea responsive en todas las pantallas*/
 
-@keyframes fadeIn {
-  to {
-     opacity: 1; }
-}
 
-@keyframes dropIn {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/*para tablet */
 
-@keyframes aparecer {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-  
-  .hero-image {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .tecnologia {
-    width: 140px;
-    height: 140px;
-    font-size: 0.9rem;
-  }
-  
-  .tecnologia i {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
   .hero {
     flex-direction: column;
     text-align: center;
-    padding-top: 4rem;
   }
   
   .hero-content {
     padding-right: 0;
     margin-bottom: 3rem;
   }
-  
+}
+  .contenido-sobre-mi {
+    padding: 2rem 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .parrafo {
+    font-size: 1rem;
+    text-align: left;
+  }
+
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     animation: typing 1.5s steps(20, end) forwards, blink 0.8s step-end infinite;
   }
   
@@ -918,12 +785,15 @@ nav {
     padding: 0.9rem 2rem;
     font-size: 1rem;
   }
-  
+
+
   .hero-image {
     width: 180px;
     height: 180px;
     margin-bottom: 1.5rem;
   }
+
+
   
   .navegation {
     position: fixed;
@@ -963,70 +833,84 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
   }
   
-  .contenido-sobre-mi {
-    padding: 2rem 1.5rem;
+  h1 {
+    font-size: 2.5rem;
   }
   
-  .titulo {
-    font-size: 2rem;
+  .subtitle {
+    font-size: 1.2rem;
   }
-  
-  .subtitulo {
-    font-size: 1.5rem;
-  }
-  
-  .parrafo {
-    font-size: 1rem;
-    text-align: left;
-  }
+
+
   
   .habilidad {
     font-size: 1rem;
     padding: 1.2rem 0.8rem;
   }
-  
+
   .titulo-habilidades {
     font-size: 2rem;
   }
-}
+
+
+
+
+
+/*para telefono moviles */
 
 @media (max-width: 480px) {
   .hero-content {
     padding: 0 1rem;
   }
-  
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
+
   .conocimientos-contenedor {
     gap: 1rem;
   }
-  
+
   .tecnologia {
-    width: 120px;
-    height: 120px;
+    width: 100px;
     padding: 1rem;
-    font-size: 0.8rem;
   }
-  
+
   .tecnologia i {
     font-size: 2rem;
   }
-  
+
+  .habilidad {
+    font-size: 1rem;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .titulo-habilidades {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+  }
+
   .hero-image {
     width: 150px;
     height: 150px;
     border-width: 3px;
+    
   }
-  
-  .contact-form {
-    padding: 1.5rem;
+}
+
+/* La animación debe ir fuera de la media query */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .redes a {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+  100% {
+    transform: rotate(360deg);
   }
 }
