@@ -6,19 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Fuentes de Google y Animate.css -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/icon.png" type="">
-
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    
     <link rel="stylesheet" href="estilo.css">
-
-    <!-- Script para JavaScript -->
     <script defer src="javascript.js"></script>
 
     <title>Mi Portafolio</title>
 
-    <!-- Estilo para el desplazamiento suave -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -28,7 +23,6 @@
 <body>
     <header>
         <nav>
-            <!-- Logo y menú de navegación -->
             <div class="logo">MiPortafolio</div>
             <ul class="navegation">
                 <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
@@ -36,7 +30,6 @@
                 <li><a href="#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
                 <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
-            <!-- Barra de menú -->
             <div class="barra">
                 <div class="linea1"></div>
                 <div class="linea2"></div>
@@ -45,11 +38,11 @@
         </nav>
     </header>
 
-    <!-- Sección principal (Inicio) -->
+    <!-- Sección Inicio -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Hola, soy <span class="highlight">MOHAMED KONE</span></h1>
-            <p class="subtitle">Desarrollador Web</p>
+            <p class="subtitle">Desarrollador Web Full Stack</p>
             <a href="#proyectos" class="cta-button">Ver mis proyectos</a>
         </div>
         <div class="hero-image">
@@ -57,81 +50,87 @@
         </div>
     </section>
 
-    <!-- Sección de Proyectos -->
+    <!-- Sección Proyectos y Tecnologías -->
     <section id="proyectos" class="proje">
         <h2>Mis Proyectos</h2>
+
+        <!-- Tecnologías -->
         <div class="conocimientos-section">
-            <h3>Tecnologías que domino</h3>
+            <h3>Tecnologías que uso</h3>
             <div class="conocimientos-contenedor">
-                <div class="tecnologia">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML5</span>
-                </div>
-                <div class="tecnologia">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS3</span>
-                </div>
-                <div class="tecnologia">
-                    <i class="fab fa-js"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="tecnologia">
-                    <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
-                </div>
+                <div class="tecnologia"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="tecnologia"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="tecnologia"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="tecnologia"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="tecnologia"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                <div class="tecnologia"><i class="fas fa-server"></i><span>Express</span></div>
+                <div class="tecnologia"><i class="fas fa-database"></i><span>MongoDB</span></div>
+                <div class="tecnologia"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                <div class="tecnologia"><i class="fas fa-code"></i><span>TypeScript</span></div>
+                <div class="tecnologia"><i class="fas fa-layer-group"></i><span>Next.js</span></div>
+                <div class="tecnologia"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="tecnologia"><i class="fas fa-lock"></i><span>Bcrypt</span></div>
+                <div class="tecnologia"><i class="fas fa-key"></i><span>JWT</span></div>
+                <div class="tecnologia"><i class="fab fa-aws"></i><span>AWS</span></div>
             </div>
         </div>
 
-        
-        <div class="proyecto">
-  <div class="imagen-proyecto">
-    <img src="img/login.avif" alt="Login con Bcrypt" class="clickable-img">
-  </div>
-  <h4>Login con react y node.js</h4>
-  <p>Mini proyecto de login con Node.js, Express y Bcrypt.</p>
-</div>
+        <!-- Contenedor de Proyectos -->
+        <div class="proyectos-contenedor">
+            <!-- Proyecto 1 -->
+            <a href="https://frontend-tarea.onrender.com/" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/login.avif" alt="Login con Bcrypt">
+                </div>
+                <h4>Login con React y Node.js</h4>
+                <p>Mini proyecto de login con Node.js, Express y Bcrypt.</p>
+            </a>
 
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="cerrar">&times;</span>
-    <img src="img/login.avif" alt="Login con Bcrypt">
-    <a href="https://frontend-tarea.onrender.com/" target="_blank" class="btn-ir">Ver Proyecto</a>
-  </div>
-</div>
-
+            
+        </div>
     </section>
 
-    <!-- Sección "Sobre mí" -->
+    <!-- Sección Sobre mí -->
     <section id="sobre-mi" class="seccion-sobre-mi">
         <div class="contenido-sobre-mi">
             <h2 class="titulo animado">Sobre mí</h2>
             <p class="parrafo animado retraso-1">
-                Soy un desarrollador web junior con muchas ganas de crecer en este mundo. Me formé en un bootcam.
+                Soy un desarrollador web junior Full Stack con muchas ganas de crecer en este mundo. Me formé en un bootcamp intensivo donde adquirí sólidos conocimientos en desarrollo web.
             </p>
             <p class="parrafo animado retraso-2">
-                Me encanta crear sitios web que no solo funcionen bien, sino que también se vean atractivos. Disfruto mucho el desarrollo frontend y trabajar con diseño limpio y funcional.
+                Me encanta crear sitios web que funcionen bien y se vean atractivos. Disfruto mucho tanto del desarrollo frontend como del backend, y me apasiona aprender nuevas tecnologías.
             </p>
             <p class="parrafo animado retraso-3">
-                Fuera del desarrollo, Me gusta jugar al fútbol en mi tiempo libre, algo que me ayuda a desconectar, inspirarme y mantener un buen equilibrio entre lo personal y lo profesional.
+                Fuera del desarrollo, me gusta jugar al fútbol, algo que me ayuda a desconectar y mantener un buen equilibrio entre el trabajo y la vida personal.
             </p>
-            <h3 class="subtitulo animado retraso-4">Mis habilidades técnicas</h3>
+            <h3 class="subtitulo animado retraso-4">Mi filosofía de trabajo</h3>
+            <p class="parrafo animado retraso-5">
+                Creo en el código limpio, las buenas prácticas y el trabajo en equipo. Siempre estoy buscando mejorar mis habilidades y enfrentar nuevos desafíos.
+            </p>
         </div>
     </section>
 
-    <!-- Sección de habilidades -->
+    <!-- Sección Habilidades -->
     <section class="seccion-habilidades">
         <h2 class="titulo-habilidades">Mis habilidades técnicas</h2>
         <div class="contenedor-habilidades">
             <div class="habilidad animada retraso-1">🔥 <span>HTML5</span></div>
             <div class="habilidad animada retraso-2">🎨 <span>CSS3</span></div>
             <div class="habilidad animada retraso-3">⚡ <span>JavaScript</span></div>
-            <div class="habilidad animada retraso-4">🔧 <span>Git</span></div>
-            <div class="habilidad animada retraso-5">📱 <span>Responsive Design</span></div>
+            <div class="habilidad animada retraso-4">⚛️ <span>React</span></div>
+            <div class="habilidad animada retraso-5">💻 <span>Node.js & Express</span></div>
+            <div class="habilidad animada retraso-6">🗄️ <span>MongoDB</span></div>
+            <div class="habilidad animada retraso-7">🗄️ <span>PostgreSQL</span></div>
+            <div class="habilidad animada retraso-8">🟦 <span>TypeScript</span></div>
+            <div class="habilidad animada retraso-9">📦 <span>Next.js</span></div>
+            <div class="habilidad animada retraso-10">🔧 <span>Git</span></div>
+            <div class="habilidad animada retraso-11">🔑 <span>JWT & Bcrypt</span></div>
+            <div class="habilidad animada retraso-12">📱 <span>Responsive Design</span></div>
+            <div class="habilidad animada retraso-13">☁️ <span>AWS</span></div>
         </div>
     </section>
 
-    <!-- Sección de contacto -->
+    <!-- Sección Contacto -->
     <section id="contacto" class="contact">
         <h2>Contacto</h2>
         <form class="contact-form">
@@ -141,19 +140,28 @@
             <button type="submit">Enviar</button>
         </form>
         <div class="redes">
-            <a href="https://github.com/mhdkon" target="_blank">
+            <a href="https://github.com/mhdkon" target="_blank" title="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank">
+            <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank" title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com/vikis_kone/" target="_blank">
+            <a href="https://www.instagram.com/vikis_kone/" target="_blank" title="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/34632410434" target="_blank">
+            <a href="https://wa.me/34632410434" target="_blank" title="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:tuemail@ejemplo.com" title="Email">
+                <i class="fas fa-envelope"></i>
             </a>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer style="background: #0f172a; padding: 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="color: #94a3b8; margin-bottom: 1rem;">&copy; 2024 Mohamed Kone. Todos los derechos reservados.</p>
+        <p style="color: #64748b; font-size: 0.9rem;">Desarrollado con ❤️ usando HTML5, CSS3 y JavaScript</p>
+    </footer>
 </body>
 </html>
