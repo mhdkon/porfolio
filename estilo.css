@@ -1336,3 +1336,29 @@ nav {
     padding: 1.5rem;
   }
 }
+/* CSS */
+.mini-titulo {
+  display: inline-block;        /* se ajusta al contenido */
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: clamp(0.68rem, 0.9vw, 0.9rem); /* pequeño pero responsive */
+  font-weight: 600;             /* buena legibilidad */
+  line-height: 1.2;             /* evita que se vea apelotonado */
+  letter-spacing: 0.2px;        /* mejora lectura en tamaño pequeño */
+  color: #0f1724;               /* alto contraste sobre fondos claros */
+  background: rgba(15,23,36,0.04); /* ligero recuadro para separarlo del fondo */
+  padding: 6px 10px;            /* hace que no parezca "pegado" al resto */
+  border-radius: 8px;           /* aspecto suave y moderno */
+  margin: 0;                    /* controla el espaciado si está en línea */
+  max-width: 100%;              /* evita desbordes en móviles */
+  white-space: nowrap;          /* mantener en una sola línea */
+  overflow: hidden;
+  text-overflow: ellipsis;      /* "..." si queda muy largo */
+  box-shadow: 0 1px 0 rgba(15,23,36,0.04) inset;
+}
+
+/* Variante para fondo oscuro */
+.dark .mini-titulo {
+  color: #f8fafc;
+  background: rgba(255,255,255,0.04);
+  box-shadow: none;
+}
