@@ -9,14 +9,14 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #0f172a;
   color: #f8fafc;
-  line-height: 1.6;
-  padding-top: 80px;
+  line-height: 1.5;
+  padding-top: 70px;
   overflow-x: hidden;
 }
 
 /*  HEADER Y NAVEGACIÓN */
 header {
-  background-color: rgba(15, 23, 42, 0.9);
+  background-color: rgba(15, 23, 42, 0.95);
   position: fixed;
   width: 100%;
   top: 0;
@@ -27,21 +27,21 @@ header {
 }
 
 header.scrolled {
-  padding: 0.5rem 0;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
+  padding: 1rem 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #f8fafc;
   cursor: pointer;
@@ -57,26 +57,27 @@ nav {
 .navegation {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 15px;
   justify-content: center;
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
 }
 
 .navegation li a {
   text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.05);
   color: #f8fafc;
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  font-size: 0.9rem;
 }
 
 .navegation li a::before {
@@ -97,17 +98,17 @@ nav {
 .navegation li a:hover {
   background-color: #38bdf8;
   color: #0f172a;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
 }
 
 .navegation li a i {
-  font-size: 18px;
+  font-size: 16px;
   transition: transform 0.3s ease;
 }
 
 .navegation li a:hover i {
-  transform: rotate(15deg) scale(1.2);
+  transform: rotate(15deg) scale(1.1);
 }
 
 .barra {
@@ -126,7 +127,7 @@ nav {
 
 /*  SECCIÓN HERO  */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -134,7 +135,7 @@ nav {
   color: #f8fafc;
   position: relative;
   overflow: hidden;
-  padding: 0 5%;
+  padding: 1rem 5%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   max-width: 1400px;
   margin: 0 auto;
@@ -146,7 +147,7 @@ nav {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   background: linear-gradient(transparent, #0f172a);
   z-index: 1;
 }
@@ -155,15 +156,15 @@ nav {
   max-width: 600px;
   position: relative;
   z-index: 2;
-  padding: 2rem;
+  padding: 1rem;
   animation: fadeInUp 1s ease-out;
   text-align: left;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
   color: #f8fafc;
   opacity: 0;
@@ -183,7 +184,7 @@ nav {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #38bdf8;
   z-index: -1;
   border-radius: 2px;
@@ -191,13 +192,13 @@ nav {
 }
 
 .highlight:hover::after {
-  height: 6px;
+  height: 4px;
   background: #0ea5e9;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
   color: #94a3b8;
   font-weight: 400;
   opacity: 0;
@@ -206,14 +207,14 @@ nav {
 
 .cta-button {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem;
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: white;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
   transform: translateY(-10px);
   opacity: 0;
   animation: dropIn 1s ease-out 3s forwards;
@@ -238,21 +239,20 @@ nav {
 }
 
 .cta-button:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(14, 165, 233, 0.5);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.5);
   background: linear-gradient(135deg, #0ea5e9, #38bdf8);
 }
 
 /* Contenedor de la imagen de perfil */
 .hero-image {
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   position: relative;
   border-radius: 50%;
-  border: 4px solid #38bdf8;
-  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+  border: 3px solid #38bdf8;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
   transition: all 0.4s ease;
-  animation: float 6s ease-in-out infinite;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -270,51 +270,47 @@ nav {
 /* Efecto hover sobre la imagen*/
 .hero-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.6);
 }
 
 .hero-image:hover img {
   filter: grayscale(0%) contrast(120%);
 }
 
-/* Efecto flotante */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-/* Efecto borde animado */
+/* Efecto borde animado - SOLO EN HOVER */
 .hero-image::before {
   content: '';
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border: 3px solid transparent;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid transparent;
   border-top-color: #0ea5e9;
   border-right-color: #0ea5e9;
   border-radius: 50%;
-  animation: spin 8s linear infinite;
   z-index: 1;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-image:hover::before {
+  opacity: 1;
+  animation: spin 8s linear infinite;
 }
 
 /* ===== SECCIÓN PROYECTOS ===== */
 .proje {
-  padding: 5rem 5%;
+  padding: 3rem 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .proje h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
   color: #f8fafc;
   position: relative;
 }
@@ -322,22 +318,22 @@ nav {
 .proje h2::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
+  width: 80px;
+  height: 2px;
   background: linear-gradient(90deg, #38bdf8, transparent);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 /* Sección de conocimientos */
 .conocimientos-section {
-  margin-bottom: 3rem;
-  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
   background: #0f172a;
-  border-radius: 2rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -351,16 +347,15 @@ nav {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
   z-index: 0;
 }
 
 .conocimientos-section h3 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   color: #f8fafc;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   position: relative;
   z-index: 1;
 }
@@ -369,27 +364,27 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   position: relative;
   z-index: 1;
 }
 
 .tecnologia {
-  width: 160px;
-  height: 160px;
-  border-radius: 1rem;
-  padding: 1.5rem;
+  width: 140px;
+  height: 140px;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -413,18 +408,18 @@ nav {
 }
 
 .tecnologia:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .tecnologia i {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
   transition: transform 0.3s ease;
 }
 
 .tecnologia:hover i {
-  transform: scale(1.2) rotate(10deg);
+  transform: scale(1.1) rotate(8deg);
 }
 
 /* Colores para cada tecnología */
@@ -456,17 +451,17 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
   position: relative;
   z-index: 1;
 }
 
 .proyecto {
-  width: 300px;
-  height: 300px;
-  border-radius: 1rem;
-  padding: 1.5rem;
+  width: 280px;
+  height: 280px;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
   color: white;
   font-weight: bold;
   display: flex;
@@ -474,8 +469,8 @@ nav {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -502,17 +497,17 @@ nav {
 }
 
 .proyecto:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.3);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
 }
 
 .imagen-proyecto {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1.5rem;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -537,11 +532,11 @@ nav {
 }
 
 .proyecto h4 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
   color: #f8fafc;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
 
@@ -550,9 +545,9 @@ nav {
 }
 
 .proyecto p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #cbd5e1;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
   transition: color 0.3s ease;
 }
@@ -565,12 +560,12 @@ nav {
 .proyecto::after {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
   background: linear-gradient(45deg, #38bdf8, #0ea5e9, #38bdf8);
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   z-index: -2;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -617,43 +612,43 @@ nav {
 
 .modal-content {
   background: linear-gradient(135deg, #1e293b, #0f172a);
-  padding: 2.5rem;
-  border-radius: 1.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
   text-align: center;
-  max-width: 500px;
+  max-width: 450px;
   width: 90%;
   animation: fadeInUp 0.4s ease-out;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .modal-content::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
   background: linear-gradient(45deg, #38bdf8, #0ea5e9, #38bdf8);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   z-index: -1;
   opacity: 0.5;
 }
 
 .modal-content img {
   width: 100%;
-  border-radius: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .modal-content .btn-ir {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem;
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: #fff;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -678,20 +673,20 @@ nav {
 }
 
 .modal-content .btn-ir:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.5);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.5);
 }
 
 .cerrar {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 12px;
+  right: 16px;
   color: #38bdf8;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -700,13 +695,13 @@ nav {
 }
 
 .cerrar:hover {
-  transform: scale(1.2) rotate(90deg);
+  transform: scale(1.1) rotate(90deg);
   background: rgba(56, 189, 248, 0.2);
 }
 
 /* SECCIÓN SOBRE MÍ  */
 .seccion-sobre-mi {
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   background-color: #1e293b;
   display: flex;
   justify-content: center;
@@ -716,9 +711,9 @@ nav {
 .contenido-sobre-mi {
   max-width: 800px;
   background-color: #0f172a;
-  padding: 3rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.1);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
   opacity: 0;
   animation: aparecer 1s ease-out forwards;
   position: relative;
@@ -726,42 +721,43 @@ nav {
 }
 
 .titulo {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #38bdf8;
   text-align: center;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px #38bdf8;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px #38bdf8;
   position: relative;
 }
 
 .titulo::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
+  width: 60px;
+  height: 2px;
   background: #38bdf8;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .subtitulo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #7dd3fc;
   text-align: center;
-  margin-top: 2.5rem;
-  text-shadow: 0 0 6px #7dd3fc;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 4px #7dd3fc;
 }
 
 .parrafo {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #e2e8f0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: justify;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 .parrafo::before {
@@ -773,7 +769,7 @@ nav {
 
 .animado {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(15px);
   animation: aparecer 0.8s forwards ease-out;
 }
 
@@ -784,7 +780,7 @@ nav {
 
 /*  SECCIÓN HABILIDADES  */
 .seccion-habilidades {
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   background-color: #0f172a;
   color: #f8fafc;
   text-align: center;
@@ -793,37 +789,37 @@ nav {
 }
 
 .titulo-habilidades {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
   color: #38bdf8;
-  text-shadow: 0 0 10px #38bdf8;
+  text-shadow: 0 0 8px #38bdf8;
   position: relative;
   z-index: 1;
 }
 
 .contenedor-habilidades {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
   justify-items: center;
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .habilidad {
   background-color: #1e293b;
-  border-radius: 1rem;
-  padding: 1.5rem 1rem;
-  font-size: 1.2rem;
+  border-radius: 0.8rem;
+  padding: 1.2rem 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   width: 100%;
-  max-width: 200px;
-  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.1);
+  max-width: 180px;
+  box-shadow: 0 3px 15px rgba(56, 189, 248, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -837,7 +833,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: linear-gradient(90deg, #38bdf8, #0ea5e9);
   transform: scaleX(0);
   transform-origin: left;
@@ -867,13 +863,13 @@ nav {
 .retraso-13 { animation-delay: 2.6s; }
 
 .habilidad:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 6px 30px rgba(56, 189, 248, 0.25);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.2);
 }
 
 /*  SECCIÓN CONTACTO */
 .contact {
-  padding: 5rem 5%;
+  padding: 3rem 5%;
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
@@ -892,22 +888,22 @@ nav {
 }
 
 .contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   color: #f8fafc;
   position: relative;
   z-index: 1;
 }
 
 .contact-form {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   display: grid;
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 1.5rem;
   background: rgba(30, 41, 59, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 1;
@@ -917,9 +913,9 @@ nav {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 0.8rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+  border-radius: 4px;
   background: rgba(15, 23, 42, 0.5);
   color: #f8fafc;
   font-family: 'Montserrat', sans-serif;
@@ -930,20 +926,20 @@ nav {
 .contact-form textarea:focus {
   outline: none;
   border-color: #38bdf8;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 120px;
 }
 
 .contact-form button {
   background-color: #2563eb;
   color: white;
   border: none;
-  padding: 1rem;
-  border-radius: 5px;
+  padding: 0.8rem;
+  border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -969,32 +965,32 @@ nav {
 .contact-form button:hover {
   background-color: #1e40af;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
 }
 
 .redes {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 15px;
+  padding: 1rem;
   position: relative;
   z-index: 1;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .redes a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
   color: #ffffff;
   background-color: #1e293b;
   border-radius: 50%;
   text-decoration: none;
   transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -1020,8 +1016,8 @@ nav {
 }
 
 .redes a:hover {
-  transform: scale(1.2) rotate(8deg);
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+  transform: scale(1.15) rotate(8deg);
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.3);
 }
 
 /* Colores personalizados por red social */
@@ -1044,7 +1040,7 @@ nav {
 .redes .fa-whatsapp:hover {
   background-color: #25D366;
   color: white;
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
 }
 
 /* ===== ANIMACIONES ===== */
@@ -1077,7 +1073,7 @@ nav {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -1101,15 +1097,6 @@ nav {
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes borderGlow {
   0% {
     background-position: 0% 50%;
@@ -1125,72 +1112,81 @@ nav {
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
   
   .hero-image {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
   }
   
   .tecnologia {
-    width: 140px;
-    height: 140px;
-    font-size: 0.9rem;
+    width: 130px;
+    height: 130px;
+    font-size: 0.85rem;
   }
   
   .tecnologia i {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .proyecto {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
+  }
+  
+  .contenedor-habilidades {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
   .hero {
+    min-height: 70vh;
     flex-direction: column;
     text-align: center;
-    padding-top: 4rem;
+    padding: 1rem 5%;
   }
   
   .hero-content {
     padding-right: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
   
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
   
   .cta-button {
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
   }
   
   .hero-image {
-    width: 220px;
-    height: 220px;
-    margin-bottom: 1.5rem;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
   }
   
   .navegation {
     position: fixed;
     right: 0;
-    top: 80px;
+    top: 60px;
     background-color: rgba(15, 23, 42, 0.95);
     width: 100%;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     clip-path: circle(0px at 90% -10%);
     transition: all 0.5s ease-out;
     backdrop-filter: blur(10px);
@@ -1201,7 +1197,7 @@ nav {
   }
   
   .navegation li {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
   }
   
   .barra {
@@ -1221,29 +1217,29 @@ nav {
   }
   
   .contenido-sobre-mi {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
   
   .titulo {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .subtitulo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .parrafo {
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: left;
   }
   
   .habilidad {
-    font-size: 1rem;
-    padding: 1.2rem 0.8rem;
+    font-size: 0.9rem;
+    padding: 1rem 0.6rem;
   }
   
   .titulo-habilidades {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .conocimientos-contenedor {
@@ -1262,28 +1258,40 @@ nav {
   }
   
   .proyecto {
-    width: 260px;
-    height: 260px;
-    padding: 1.2rem;
+    width: 240px;
+    height: 240px;
+    padding: 1rem;
   }
   
   .imagen-proyecto {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
   
   .proyecto h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .proyecto p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Habilidades en 2 columnas para móvil */
+  .contenedor-habilidades {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .habilidad {
+    max-width: none;
+    font-size: 0.9rem;
+    padding: 1rem 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   
   .hero h1 {
@@ -1308,51 +1316,72 @@ nav {
   .hero-image {
     width: 180px;
     height: 180px;
-    border-width: 3px;
+    border-width: 2px;
   }
   
   .contact-form {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
   
   .redes a {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
   }
   
   .proyecto {
-    width: 240px;
-    height: 240px;
-    padding: 1rem;
+    width: 100%;
+    max-width: 280px;
+    height: 220px;
+    padding: 0.8rem;
   }
   
   .imagen-proyecto {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   
   .modal-content {
     padding: 1.5rem;
   }
+  
+  .seccion-sobre-mi,
+  .seccion-habilidades {
+    padding: 2rem 0.5rem;
+  }
+  
+  .contenido-sobre-mi {
+    padding: 1.2rem;
+  }
+  
+  /* Mantener 2 columnas en móviles pequeños */
+  .contenedor-habilidades {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .habilidad {
+    padding: 0.8rem 0.4rem;
+    font-size: 0.85rem;
+  }
 }
 /* CSS */
 .mini-titulo {
-  display: inline-block;        /* se ajusta al contenido */
+  display: inline-block;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  font-size: clamp(0.68rem, 0.9vw, 0.9rem); /* pequeño pero responsive */
-  font-weight: 600;             /* buena legibilidad */
-  line-height: 1.2;             /* evita que se vea apelotonado */
-  letter-spacing: 0.2px;        /* mejora lectura en tamaño pequeño */
-  color: #0f1724;               /* alto contraste sobre fondos claros */
-  background: rgba(15,23,36,0.04); /* ligero recuadro para separarlo del fondo */
-  padding: 6px 10px;            /* hace que no parezca "pegado" al resto */
-  border-radius: 8px;           /* aspecto suave y moderno */
-  margin: 0;                    /* controla el espaciado si está en línea */
-  max-width: 100%;              /* evita desbordes en móviles */
-  white-space: nowrap;          /* mantener en una sola línea */
+  font-size: clamp(0.68rem, 0.9vw, 0.9rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  color: #0f1724;
+  background: rgba(15,23,36,0.04);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin: 0;
+  max-width: 100%;
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;      /* "..." si queda muy largo */
+  text-overflow: ellipsis;
   box-shadow: 0 1px 0 rgba(15,23,36,0.04) inset;
 }
 
