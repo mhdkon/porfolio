@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Fuentes de Google y Animate.css -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -50,60 +49,104 @@
         </div>
     </section>
 
-
-        <!-- Tecnologías -->
-        <div class="conocimientos-section">
-            <h3>Tecnologías que uso</h3>
-            <div class="conocimientos-contenedor">
-                <div class="tecnologia"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                <div class="tecnologia"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="tecnologia"><i class="fab fa-js"></i><span>JavaScript</span></div>
-                <div class="tecnologia"><i class="fab fa-react"></i><span>React</span></div>
-                <div class="tecnologia"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-                <div class="tecnologia"><i class="fas fa-server"></i><span>Express</span></div>
-                <div class="tecnologia"><i class="fas fa-database"></i><span>MongoDB</span></div>
-                <div class="tecnologia"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
-                <div class="tecnologia"><i class="fas fa-code"></i><span>TypeScript</span></div>
-                <div class="tecnologia"><i class="fas fa-layer-group"></i><span>Next.js</span></div>
-                <div class="tecnologia"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                <div class="tecnologia"><i class="fas fa-lock"></i><span>Bcrypt</span></div>
-                <div class="tecnologia"><i class="fas fa-key"></i><span>JWT</span></div>
-                <div class="tecnologia"><i class="fab fa-aws"></i><span>AWS</span></div>
-            </div>
+    <!-- Tecnologías -->
+    <div class="conocimientos-section">
+        <h3>Tecnologías que uso</h3>
+        <div class="conocimientos-contenedor">
+            <div class="tecnologia"><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="tecnologia"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tecnologia"><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="tecnologia"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="tecnologia"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="tecnologia"><i class="fas fa-server"></i><span>Express</span></div>
+            <div class="tecnologia"><i class="fas fa-database"></i><span>MongoDB</span></div>
+            <div class="tecnologia"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+            <div class="tecnologia"><i class="fas fa-code"></i><span>TypeScript</span></div>
+            <div class="tecnologia"><i class="fas fa-layer-group"></i><span>Next.js</span></div>
+            <div class="tecnologia"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="tecnologia"><i class="fas fa-lock"></i><span>Bcrypt</span></div>
+            <div class="tecnologia"><i class="fas fa-key"></i><span>JWT</span></div>
+            <div class="tecnologia"><i class="fab fa-aws"></i><span>AWS</span></div>
         </div>
+    </div>
 
-        <!-- Contenedor de Proyectos -->
-
-        <!-- Sección Proyectos y Tecnologías -->
+    <!-- Proyectos -->
     <section id="proyectos" class="proje">
         <h2>Mis Proyectos</h2>
 
         <div class="proyectos-contenedor">
-            <!-- Proyecto 1 -->
             <a href="https://tienda-frontend-1.onrender.com/" target="_blank" class="proyecto">
                 <div class="imagen-proyecto">
-                    <img src="img/tienda.jpg" alt="Login con Bcrypt">
+                    <img src="img/tienda.jpg" alt="Tienda online">
                 </div>
-                <!-- HTML -->
-<h4 class="mini-titulo">Tienda online</h4>
-
-            
+                <h4 class="mini-titulo">Tienda online</h4>
             </a>
-            <!-- Proyecto: Generador de Colores -->
-<a href="https://frontend-colores.onrender.com/" target="_blank" class="proyecto">
-  <div class="imagen-proyecto">
-    <img src="img/colore.png" alt="Generador de Colores">
-  </div>
-  <h4>Generador de Colores</h4>
-</a>
 
-            
+            <a href="https://frontend-colores.onrender.com/" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/colore.png" alt="Generador de Colores">
+                </div>
+                <h4>Generador de Colores</h4>
+            </a>
 
-            
+            <a href="https://unisex-afro.netlify.app/" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/peluqueria.jpg" alt="web de peluqueria">
+                </div>
+                <h4>Web de una peluquería</h4>
+            </a>
         </div>
     </section>
 
-    <!-- Sección Sobre mí -->
+    <!-- NUEVA SECCIÓN: DESCRIPCIÓN DETALLADA DE PROYECTOS -->
+    <section id="descripcion-proyectos" style="padding: 4rem 2rem; max-width: 900px; margin: auto;">
+        <h2 style="text-align:center; margin-bottom:2rem;">Cómo construí estos proyectos</h2>
+
+        <div style="margin-bottom:3rem;">
+            <h3> Tienda Online</h3>
+            <p>
+                Este proyecto es una tienda donde los usuarios pueden navegar entre productos, ver detalles 
+                y disfrutar de una interfaz moderna.  
+                El frontend está hecho con <strong>React</strong> y lo desplegué en Render.
+            </p>
+            <p>
+                El backend lo desarrollé con <strong>Node.js y Express</strong>, organizando rutas, controladores y middleware.
+                Utilicé <strong>PostgreSQL</strong> como base de datos para almacenar productos, usuarios y acciones.
+            </p>
+            <p>
+                En este proyecto reforcé: diseño responsive, CRUD, API REST, manejo de errores, 
+                conexión con base de datos y despliegue en la nube.
+            </p>
+        </div>
+
+        <div style="margin-bottom:3rem;">
+            <h3> Generador de Colores</h3>
+            <p>
+                Esta herramienta genera colores aleatorios y muestra su código en HEX.  
+                Fue construido completamente con <strong>JavaScript puro</strong> manipulando el DOM.
+            </p>
+            <p>
+                El usuario puede copiar el color, actualizarlo y usarlo para inspiración visual.  
+                Me permitió practicar eventos, funciones dinámicas y diseño simple orientado a utilidad.
+            </p>
+        </div>
+
+        <div style="margin-bottom:3rem;">
+            <h3> Web de Peluquería</h3>
+            <p>
+                Sitio web moderno para una peluquería afro.  
+                Usé <strong>HTML, CSS y JavaScript</strong> enfocándome en diseño visual, fotos, accesibilidad y estructura limpia.
+            </p>
+            <p>
+                El proyecto está desplegado en Netlify y optimizado para SEO básico, carga rápida y móviles.
+            </p>
+            <p>
+                Aprendí organización de archivos, optimización de imágenes y diseño profesional para clientes reales.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sobre mí -->
     <section id="sobre-mi" class="seccion-sobre-mi">
         <div class="contenido-sobre-mi">
             <h2 class="titulo animado">Sobre mí</h2>
@@ -111,19 +154,19 @@
                 Soy un desarrollador web junior Full Stack con muchas ganas de crecer en este mundo. Me formé en un bootcamp intensivo donde adquirí sólidos conocimientos en desarrollo web.
             </p>
             <p class="parrafo animado retraso-2">
-                Me encanta crear sitios web que funcionen bien y se vean atractivos. Disfruto mucho tanto del desarrollo frontend como del backend, y me apasiona aprender nuevas tecnologías.
+                Me encanta crear sitios web que funcionen bien y se vean atractivos. Disfruto tanto del desarrollo frontend como del backend.
             </p>
             <p class="parrafo animado retraso-3">
-                Fuera del desarrollo, me gusta jugar al fútbol, algo que me ayuda a desconectar y mantener un buen equilibrio entre el trabajo y la vida personal.
+                Fuera del desarrollo, me gusta jugar al fútbol y mantener un equilibrio saludable entre trabajo y vida personal.
             </p>
             <h3 class="subtitulo animado retraso-4">Mi filosofía de trabajo</h3>
             <p class="parrafo animado retraso-5">
-                Creo en el código limpio, las buenas prácticas y el trabajo en equipo. Siempre estoy buscando mejorar mis habilidades y enfrentar nuevos desafíos.
+                Creo en el código limpio, las buenas prácticas y el aprendizaje continuo.
             </p>
         </div>
     </section>
 
-    <!-- Sección Habilidades -->
+    <!-- Habilidades -->
     <section class="seccion-habilidades">
         <h2 class="titulo-habilidades">Mis habilidades técnicas</h2>
         <div class="contenedor-habilidades">
@@ -143,7 +186,7 @@
         </div>
     </section>
 
-    <!-- Sección Contacto -->
+    <!-- Contacto -->
     <section id="contacto" class="contact">
         <h2>Contacto</h2>
         <form class="contact-form">
