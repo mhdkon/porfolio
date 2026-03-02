@@ -430,7 +430,7 @@ nav {
 /* Colores para cada tecnología */
 .tecnologia:nth-child(1) { background-color: #e44d26; } /* HTML5 */
 .tecnologia:nth-child(2) { background-color: #264de4; } /* CSS3 */
-.tecnologia:nth-child(3) { 
+.tecnologia:nth-child(3) {
   background-color: #f7df1e; /* JavaScript */
   color: #000;
 }
@@ -445,11 +445,11 @@ nav {
 .tecnologia:nth-child(12) { background-color: #4a5568; } /* Bcrypt */
 .tecnologia:nth-child(13) { background-color: #d63aff; } /* JWT */
 .tecnologia:nth-child(14) { background-color: #ff9900; } /* AWS */
+/* NUEVAS TECNOLOGÍAS */
+.tecnologia:nth-child(15) { background-color: #3776ab; } /* Python */
+.tecnologia:nth-child(16) { background-color: #092e20; } /* Django */
+.tecnologia:nth-child(17) { background-color: #4a4a55; } /* CI/CD */
 
-/* Icono específico para AWS */
-.tecnologia:nth-child(14) i {
-  color: #fff;
-}
 
 /* ===== CONTENEDOR DE PROYECTOS ===== */
 .proyectos-contenedor {
@@ -482,6 +482,7 @@ nav {
   background: linear-gradient(135deg, #1e293b, #0f172a);
   cursor: pointer;
   text-align: center;
+  text-decoration: none; /* Quita el subrayado del enlace */
 }
 
 .proyecto::before {
@@ -781,6 +782,10 @@ nav {
 .retraso-2 { animation-delay: 0.4s; }
 .retraso-3 { animation-delay: 0.6s; }
 .retraso-4 { animation-delay: 0.8s; }
+/* Añadidos para los nuevos párrafos */
+.retraso-5 { animation-delay: 1s; }
+.retraso-6 { animation-delay: 1.2s; }
+.retraso-7 { animation-delay: 1.4s; }
 
 /*  SECCIÓN HABILIDADES  */
 .seccion-habilidades {
@@ -865,6 +870,10 @@ nav {
 .retraso-11 { animation-delay: 2.2s; }
 .retraso-12 { animation-delay: 2.4s; }
 .retraso-13 { animation-delay: 2.6s; }
+/* NUEVAS HABILIDADES */
+.retraso-14 { animation-delay: 2.8s; }
+.retraso-15 { animation-delay: 3s; }
+.retraso-16 { animation-delay: 3.2s; }
 
 .habilidad:hover {
   transform: translateY(-8px) scale(1.05);
@@ -1034,10 +1043,10 @@ nav {
 }
 
 .redes .fa-instagram:hover {
-  background: radial-gradient(circle at 30% 107%, 
-    #fdf497 0%, 
-    #fd5949 45%, 
-    #d6249f 60%, 
+  background: radial-gradient(circle at 30% 107%,
+    #fdf497 0%,
+    #fd5949 45%,
+    #d6249f 60%,
     #285AEB 90%);
 }
 
@@ -1051,14 +1060,14 @@ nav {
 @keyframes typing {
   from {
      width: 0 }
-  to { 
+  to {
     width: 100% }
 }
 
 @keyframes blink {
   from, to {
      border-color: transparent }
-  50% { 
+  50% {
      border-color: #38bdf8; }
 }
 
@@ -1127,22 +1136,22 @@ nav {
   .hero h1 {
     font-size: 2.8rem;
   }
-  
+
   .hero-image {
     width: 280px;
     height: 280px;
   }
-  
+
   .tecnologia {
     width: 140px;
     height: 140px;
     font-size: 0.9rem;
   }
-  
+
   .tecnologia i {
     font-size: 2.5rem;
   }
-  
+
   .proyecto {
     width: 280px;
     height: 280px;
@@ -1155,33 +1164,33 @@ nav {
     text-align: center;
     padding-top: 4rem;
   }
-  
+
   .hero-content {
     padding-right: 0;
     margin-bottom: 3rem;
     text-align: center;
   }
-  
+
   .hero h1 {
     font-size: 2.2rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
-  
+
   .cta-button {
     padding: 0.9rem 2rem;
     font-size: 1rem;
   }
-  
+
   .hero-image {
     width: 220px;
     height: 220px;
     margin-bottom: 1.5rem;
   }
-  
+
   .navegation {
     position: fixed;
     right: 0;
@@ -1195,87 +1204,87 @@ nav {
     transition: all 0.5s ease-out;
     backdrop-filter: blur(10px);
   }
-  
+
   .navegation.active {
     clip-path: circle(1000px at 90% -10%);
   }
-  
+
   .navegation li {
     margin: 1.5rem 0;
   }
-  
+
   .barra {
     display: block;
   }
-  
+
   .barra.active .linea1 {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
+
   .barra.active .linea2 {
     opacity: 0;
   }
-  
+
   .barra.active .linea3 {
     transform: rotate(45deg) translate(-5px, -6px);
   }
-  
+
   .contenido-sobre-mi {
     padding: 2rem 1.5rem;
   }
-  
+
   .titulo {
     font-size: 2rem;
   }
-  
+
   .subtitulo {
     font-size: 1.5rem;
   }
-  
+
   .parrafo {
     font-size: 1rem;
     text-align: left;
   }
-  
+
   .habilidad {
     font-size: 1rem;
     padding: 1.2rem 0.8rem;
   }
-  
+
   .titulo-habilidades {
     font-size: 2rem;
   }
-  
+
   .conocimientos-contenedor {
     gap: 1rem;
   }
-  
+
   .tecnologia {
     width: 120px;
     height: 120px;
     padding: 1rem;
     font-size: 0.8rem;
   }
-  
+
   .tecnologia i {
     font-size: 2rem;
   }
-  
+
   .proyecto {
     width: 260px;
     height: 260px;
     padding: 1.2rem;
   }
-  
+
   .imagen-proyecto {
     width: 100px;
     height: 100px;
   }
-  
+
   .proyecto h4 {
     font-size: 1.1rem;
   }
-  
+
   .proyecto p {
     font-size: 0.8rem;
   }
@@ -1285,53 +1294,53 @@ nav {
   .hero-content {
     padding: 0 1rem;
   }
-  
+
   .hero h1 {
     font-size: 1.8rem;
   }
-  
+
   .conocimientos-contenedor {
     gap: 0.8rem;
   }
-  
+
   .tecnologia {
     width: 100px;
     height: 100px;
     padding: 0.8rem;
     font-size: 0.7rem;
   }
-  
+
   .tecnologia i {
     font-size: 1.8rem;
   }
-  
+
   .hero-image {
     width: 180px;
     height: 180px;
     border-width: 3px;
   }
-  
+
   .contact-form {
     padding: 1.5rem;
   }
-  
+
   .redes a {
     width: 50px;
     height: 50px;
     font-size: 24px;
   }
-  
+
   .proyecto {
     width: 240px;
     height: 240px;
     padding: 1rem;
   }
-  
+
   .imagen-proyecto {
     width: 90px;
     height: 90px;
   }
-  
+
   .modal-content {
     padding: 1.5rem;
   }
