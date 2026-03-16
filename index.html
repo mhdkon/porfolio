@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="estilo.css">
     <script defer src="javascript.js"></script>
 
-    <title>Mi Portafolio</title>
+    <title>Mohamed Kone - Portfolio</title>
 
     <style>
         html {
@@ -23,7 +23,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">MiPortafolio</div>
+            <div class="logo">Mohamed Kone</div>
             <ul class="navegation">
                 <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="#proyectos"><i class="fas fa-code"></i> Proyectos</a></li>
@@ -38,6 +38,17 @@
         </nav>
     </header>
 
+    <!-- Botones flotantes: modo oscuro/claro y CV descargable -->
+    <div class="floating-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <i class="fas fa-moon"></i>
+        </button>
+        <a href="img/cv-mohamed-kone.pdf" download class="cv-download" aria-label="Descargar CV">
+            <i class="fas fa-file-pdf"></i>
+            <span>CV</span>
+        </a>
+    </div>
+
     <!-- Sección Inicio -->
     <section id="inicio" class="hero">
         <div class="hero-content">
@@ -50,70 +61,65 @@
         </div>
     </section>
 
-
-        <!-- Tecnologías -->
-        <div class="conocimientos-section">
-            <h3>Tecnologías que uso</h3>
-            <div class="conocimientos-contenedor">
-                <div class="tecnologia"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                <div class="tecnologia"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="tecnologia"><i class="fab fa-js"></i><span>JavaScript</span></div>
-                <div class="tecnologia"><i class="fab fa-react"></i><span>React</span></div>
-                <div class="tecnologia"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-                <div class="tecnologia"><i class="fas fa-server"></i><span>Express</span></div>
-                <div class="tecnologia"><i class="fas fa-database"></i><span>MongoDB</span></div>
-                <div class="tecnologia"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
-                <div class="tecnologia"><i class="fas fa-code"></i><span>TypeScript</span></div>
-                <div class="tecnologia"><i class="fas fa-layer-group"></i><span>Next.js</span></div>
-                <div class="tecnologia"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                <div class="tecnologia"><i class="fas fa-lock"></i><span>Bcrypt</span></div>
-                <div class="tecnologia"><i class="fas fa-key"></i><span>JWT</span></div>
-                <div class="tecnologia"><i class="fab fa-aws"></i><span>AWS</span></div>
-            </div>
+    <!-- Tecnologías -->
+    <div class="conocimientos-section">
+        <h3>Tecnologías que uso</h3>
+        <div class="conocimientos-contenedor">
+            <div class="tecnologia"><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="tecnologia"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tecnologia"><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="tecnologia"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="tecnologia"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="tecnologia"><i class="fas fa-server"></i><span>Express</span></div>
+            <div class="tecnologia"><i class="fas fa-database"></i><span>MongoDB</span></div>
+            <div class="tecnologia"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+            <div class="tecnologia"><i class="fas fa-code"></i><span>TypeScript</span></div>
+            <div class="tecnologia"><i class="fas fa-layer-group"></i><span>Next.js</span></div>
+            <div class="tecnologia"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="tecnologia"><i class="fas fa-lock"></i><span>Bcrypt</span></div>
+            <div class="tecnologia"><i class="fas fa-key"></i><span>JWT</span></div>
+            <div class="tecnologia"><i class="fab fa-aws"></i><span>AWS</span></div>
         </div>
-
-        <!-- Contenedor de Proyectos -->
-
-        <!-- Sección Proyectos y Tecnologías -->
-    <section id="proyectos" class="proje">
-    <h2>Mis Proyectos</h2>
-
-    <div class="proyectos-contenedor">
-
-        <!-- Proyecto 1 -->
-        <a href="https://frontend-tarea.onrender.com/" target="_blank" class="proyecto">
-            <div class="imagen-proyecto">
-                <img src="img/login.avif" alt="Login con Bcrypt">
-            </div>
-            <h4>Login con React y Node.js</h4>
-        </a>
-
-        <!-- Proyecto 2 – Tienda Frontend -->
-        <a href="https://tienda-frontend-1.onrender.com" target="_blank" class="proyecto">
-            <div class="imagen-proyecto">
-                <img src="img/WhatsApp Image z.jpeg" alt="Tienda Frontend">
-            </div>
-            <h4>Tienda Frontend</h4>
-        </a>
-
-        <!-- Proyecto 3 – API de Colores -->
-        <a href="https://api-colores-grnq.onrender.com" target="_blank" class="proyecto">
-            <div class="imagen-proyecto">
-                <img src="img/WhatsApp Image c.jpeg" alt="API de Colores">
-            </div>
-            <h4>API de Colores</h4>
-        </a>
-
-        <!-- Proyecto 4 – Magical App -->
-        <a href="https://unisex-afro1.netlify.app/" target="_blank" class="proyecto">
-            <div class="imagen-proyecto">
-                <img src="img/WhatsApp Image p.jpeg" alt="peluquería afro unisex">
-            </div>
-            <h4>peluquería afro unisex  </h4>
-        </a>
-
     </div>
-</section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="proje">
+        <h2>Mis Proyectos</h2>
+
+        <div class="proyectos-contenedor">
+            <!-- Proyecto 1 -->
+            <a href="https://frontend-tarea.onrender.com/" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/login.avif" alt="Login con Bcrypt">
+                </div>
+                <h4>Login con React y Node.js</h4>
+            </a>
+
+            <!-- Proyecto 2 – Tienda Frontend -->
+            <a href="https://tienda-frontend-1.onrender.com" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/WhatsApp Image z.jpeg" alt="Tienda Frontend">
+                </div>
+                <h4>Tienda Frontend</h4>
+            </a>
+
+            <!-- Proyecto 3 – API de Colores -->
+            <a href="https://api-colores-grnq.onrender.com" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/WhatsApp Image c.jpeg" alt="API de Colores">
+                </div>
+                <h4>API de Colores</h4>
+            </a>
+
+            <!-- Proyecto 4 – Peluquería Afro -->
+            <a href="https://unisex-afro1.netlify.app/" target="_blank" class="proyecto">
+                <div class="imagen-proyecto">
+                    <img src="img/WhatsApp Image p.jpeg" alt="peluquería afro unisex">
+                </div>
+                <h4>Peluquería Afro Unisex</h4>
+            </a>
+        </div>
+    </section>
 
     <!-- Sección Sobre mí -->
     <section id="sobre-mi" class="seccion-sobre-mi">
@@ -158,11 +164,11 @@
     <!-- Sección Contacto -->
     <section id="contacto" class="contact">
         <h2>Contacto</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+        <form class="contact-form" action="https://formspree.io/f/tu-email-aqui" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar mensaje</button>
         </form>
         <div class="redes">
             <a href="https://github.com/mhdkon" target="_blank" title="GitHub">
