@@ -44,8 +44,7 @@ header {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 1300px;
+  width: min(90%, 1300px);
   background: rgba(20, 24, 28, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -70,7 +69,7 @@ nav {
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
   font-weight: 800;
   background: var(--gradient-1);
   -webkit-background-clip: text;
@@ -181,22 +180,22 @@ nav {
 /* ===== BOTONES FLOTANTES ===== */
 .floating-controls {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: clamp(20px, 4vh, 30px);
+  right: clamp(20px, 4vw, 30px);
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: clamp(10px, 2vh, 15px);
 }
 
 .theme-toggle {
-  width: 55px;
-  height: 55px;
+  width: clamp(45px, 8vw, 55px);
+  height: clamp(45px, 8vw, 55px);
   border-radius: 50%;
   background: var(--gradient-1);
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -238,13 +237,13 @@ nav {
 
 /* ===== BOTÓN DE CV MEJORADO ===== */
 .cv-download {
-  width: 65px;
-  height: 65px;
+  width: clamp(50px, 9vw, 65px);
+  height: clamp(50px, 9vw, 65px);
   border-radius: 50%;
   background: linear-gradient(135deg, #ff6b6b, #ff3366, #ff1744);
   border: none;
   color: white;
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -280,7 +279,7 @@ nav {
 }
 
 .cv-download i {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   margin-bottom: 2px;
   transition: transform 0.4s ease;
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
@@ -291,7 +290,7 @@ nav {
 }
 
 .cv-download span {
-  font-size: 0.7rem;
+  font-size: clamp(0.5rem, 2vw, 0.7rem);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -329,10 +328,12 @@ nav {
   letter-spacing: 0.5px;
 }
 
-.cv-download:hover::after {
-  opacity: 1;
-  visibility: visible;
-  right: 85px;
+@media (min-width: 769px) {
+  .cv-download:hover::after {
+    opacity: 1;
+    visibility: visible;
+    right: 85px;
+  }
 }
 
 .cv-download:active {
@@ -359,10 +360,12 @@ nav {
   font-weight: 500;
 }
 
-.theme-toggle:hover::after {
-  opacity: 1;
-  visibility: visible;
-  right: 80px;
+@media (min-width: 769px) {
+  .theme-toggle:hover::after {
+    opacity: 1;
+    visibility: visible;
+    right: 80px;
+  }
 }
 
 /* ===== HERO SECTION ===== */
@@ -371,7 +374,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 4rem;
+  gap: clamp(2rem, 6vw, 4rem);
   padding: 0 5%;
   max-width: 1400px;
   margin: 0 auto;
@@ -384,7 +387,7 @@ nav {
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 8vw, 4rem);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -413,7 +416,7 @@ nav {
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   color: var(--gray);
   margin-bottom: 2.5rem;
   position: relative;
@@ -429,17 +432,30 @@ nav {
   animation: pulse 2s ease infinite;
 }
 
+.hero-description {
+  color: var(--gray);
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .cta-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 1.2rem 3rem;
+  padding: clamp(1rem, 3vw, 1.2rem) clamp(2rem, 5vw, 3rem);
   background: var(--gradient-1);
   color: var(--light);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 3vw, 1.1rem);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: var(--shadow-glow);
   position: relative;
@@ -467,8 +483,8 @@ nav {
 }
 
 .hero-image {
-  width: 380px;
-  height: 380px;
+  width: min(380px, 60vw);
+  height: min(380px, 60vw);
   position: relative;
   justify-self: center;
 }
@@ -494,19 +510,20 @@ nav {
 
 /* ===== SECCIÓN PROYECTOS ===== */
 .proje {
-  padding: 6rem 5%;
+  padding: clamp(4rem, 10vh, 6rem) 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .proje h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   text-align: center;
   margin-bottom: 4rem;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .proje h2::before {
@@ -533,17 +550,17 @@ nav {
 /* ===== TECNOLOGÍAS ===== */
 .conocimientos-section {
   margin-bottom: 5rem;
-  padding: 3rem;
+  padding: clamp(2rem, 5vw, 3rem);
   background: rgba(20, 24, 28, 0.5);
   backdrop-filter: blur(10px);
-  border-radius: 50px;
+  border-radius: clamp(30px, 5vw, 50px);
   border: 1px solid rgba(255, 51, 102, 0.2);
   position: relative;
   overflow: hidden;
 }
 
 .conocimientos-section h3 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
   text-align: center;
   margin-bottom: 3rem;
   background: var(--gradient-1);
@@ -557,18 +574,18 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2rem);
   position: relative;
   z-index: 1;
 }
 
 .tecnologia {
-  width: 140px;
-  height: 140px;
+  width: clamp(90px, 20vw, 140px);
+  height: clamp(90px, 20vw, 140px);
   background: rgba(20, 24, 28, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 51, 102, 0.2);
-  border-radius: 30px;
+  border-radius: clamp(20px, 4vw, 30px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -600,7 +617,7 @@ nav {
 }
 
 .tecnologia i {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 8vw, 3.5rem);
   transition: all 0.4s ease;
 }
 
@@ -611,7 +628,7 @@ nav {
 
 .tecnologia span {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   transition: color 0.3s ease;
 }
 
@@ -630,8 +647,8 @@ nav {
 /* ===== PROYECTOS GRID ===== */
 .proyectos-contenedor {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
   margin-top: 3rem;
 }
 
@@ -641,8 +658,8 @@ nav {
   background: rgba(20, 24, 28, 0.5);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 51, 102, 0.2);
-  border-radius: 40px;
-  padding: 2rem;
+  border-radius: clamp(30px, 5vw, 40px);
+  padding: clamp(1.5rem, 4vw, 2rem);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: block;
   position: relative;
@@ -674,10 +691,10 @@ nav {
 }
 
 .imagen-proyecto {
-  width: 120px;
-  height: 120px;
+  width: min(120px, 30vw);
+  height: min(120px, 30vw);
   margin: 0 auto 1.5rem;
-  border-radius: 30px;
+  border-radius: clamp(20px, 5vw, 30px);
   overflow: hidden;
   border: 3px solid rgba(255, 51, 102, 0.3);
   transition: all 0.4s ease;
@@ -700,7 +717,7 @@ nav {
 }
 
 .proyecto h4 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
   text-align: center;
   color: var(--light);
   margin-bottom: 0.5rem;
@@ -731,9 +748,44 @@ nav {
   right: -30px;
 }
 
+/* ===== ESTILOS PARA LAS TECNOLOGÍAS DE CADA PROYECTO ===== */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tech span {
+  background: rgba(255, 51, 102, 0.2);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: var(--gray);
+}
+
+.proyecto:hover .tech span {
+  background: var(--primary);
+  color: white;
+}
+
+/* Ajuste para modo claro */
+body.light-mode .tech span {
+  background: rgba(255, 51, 102, 0.1);
+  color: var(--light);
+}
+
+body.light-mode .proyecto:hover .tech span {
+  background: var(--primary);
+  color: white;
+}
+
 /* ===== SOBRE MÍ ===== */
 .seccion-sobre-mi {
-  padding: 6rem 5%;
+  padding: clamp(4rem, 10vh, 6rem) 5%;
   background: linear-gradient(135deg, var(--dark), var(--dark-light));
   position: relative;
   overflow: hidden;
@@ -744,8 +796,8 @@ nav {
   margin: 0 auto;
   background: rgba(20, 24, 28, 0.7);
   backdrop-filter: blur(10px);
-  padding: 4rem;
-  border-radius: 60px;
+  padding: clamp(2rem, 6vw, 4rem);
+  border-radius: clamp(30px, 8vw, 60px);
   border: 1px solid rgba(255, 51, 102, 0.2);
   position: relative;
   z-index: 1;
@@ -753,7 +805,7 @@ nav {
 }
 
 .titulo {
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   background: var(--gradient-1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -773,7 +825,7 @@ nav {
 }
 
 .subtitulo {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   background: var(--gradient-2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -785,9 +837,9 @@ nav {
   color: var(--gray);
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  padding-left: 2rem;
+  padding-left: clamp(1.5rem, 3vw, 2rem);
   position: relative;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
 .parrafo::before {
@@ -801,13 +853,13 @@ nav {
 
 /* ===== HABILIDADES ===== */
 .seccion-habilidades {
-  padding: 6rem 5%;
+  padding: clamp(4rem, 10vh, 6rem) 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .titulo-habilidades {
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   text-align: center;
   margin-bottom: 4rem;
   background: var(--gradient-1);
@@ -830,8 +882,8 @@ nav {
 
 .contenedor-habilidades {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
 .habilidad {
@@ -839,7 +891,7 @@ nav {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 51, 102, 0.2);
   border-radius: 30px;
-  padding: 2rem 1rem;
+  padding: clamp(1.5rem, 3vw, 2rem) 1rem;
   text-align: center;
   font-weight: 600;
   transition: all 0.4s ease;
@@ -850,7 +902,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
 .habilidad::before {
@@ -898,7 +950,7 @@ nav {
 
 .modal-content {
   background: var(--dark-light);
-  padding: 2rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
   border-radius: 40px;
   max-width: 500px;
   width: 90%;
@@ -938,14 +990,14 @@ nav {
 
 /* ===== CONTACTO ===== */
 .contact {
-  padding: 6rem 5%;
+  padding: clamp(4rem, 10vh, 6rem) 5%;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
 
 .contact h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   text-align: center;
   margin-bottom: 3rem;
   background: var(--gradient-1);
@@ -969,8 +1021,8 @@ nav {
   margin: 0 auto 4rem;
   background: rgba(20, 24, 28, 0.7);
   backdrop-filter: blur(10px);
-  padding: 3rem;
-  border-radius: 60px;
+  padding: clamp(2rem, 6vw, 3rem);
+  border-radius: clamp(30px, 8vw, 60px);
   border: 1px solid rgba(255, 51, 102, 0.2);
   box-shadow: var(--shadow-lg);
 }
@@ -978,13 +1030,13 @@ nav {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1.2rem 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.2rem, 3vw, 1.5rem);
   margin-bottom: 1.5rem;
   background: rgba(10, 12, 15, 0.5);
   border: 2px solid rgba(255, 51, 102, 0.2);
   border-radius: 40px;
   color: var(--light);
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   transition: all 0.3s ease;
 }
 
@@ -1004,13 +1056,13 @@ nav {
 
 .contact-form button {
   width: 100%;
-  padding: 1.2rem;
+  padding: clamp(1rem, 3vw, 1.2rem);
   background: var(--gradient-1);
   color: var(--light);
   border: none;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
@@ -1045,22 +1097,22 @@ nav {
 .redes {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(1rem, 4vw, 2rem);
   flex-wrap: wrap;
 }
 
 .redes a {
-  width: 70px;
-  height: 70px;
+  width: clamp(55px, 12vw, 70px);
+  height: clamp(55px, 12vw, 70px);
   background: rgba(20, 24, 28, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 51, 102, 0.2);
-  border-radius: 25px;
+  border-radius: clamp(18px, 4vw, 25px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--light);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
@@ -1100,15 +1152,18 @@ footer {
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 51, 102, 0.2) !important;
   position: relative;
+  padding: 1.5rem 5%;
 }
 
 footer p {
   color: var(--gray) !important;
-  font-size: 1rem !important;
+  font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 footer p::before {
@@ -1305,32 +1360,59 @@ body.light-mode footer p {
   animation: floatParticle 10s linear infinite;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
+/* ===== NUEVOS MEDIA QUERIES MEJORADOS ===== */
+@media (max-width: 1400px) {
+  .hero {
+    padding: 0 4%;
+  }
+  .proje, .seccion-habilidades, .contact {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+  }
+  .conocimientos-section h3 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+  .titulo, .titulo-habilidades, .contact h2, .proje h2 {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+}
+
+@media (max-width: 992px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
     padding-top: 100px;
   }
-  
-  .hero h1 {
-    font-size: 3rem;
-  }
-  
   .subtitle::before {
     display: none;
   }
-  
   .hero-image {
-    width: 300px;
-    height: 300px;
+    width: min(300px, 50vw);
+    height: min(300px, 50vw);
   }
-  
-  .titulo::before,
-  .contact h2::before,
-  .proje h2::before {
-    display: none;
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .conocimientos-section {
+    padding: 2rem 1.5rem;
+  }
+  .contenido-sobre-mi {
+    padding: 2.5rem;
+  }
+  .redes a {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -1339,7 +1421,6 @@ body.light-mode footer p {
     width: 95%;
     border-radius: 30px;
   }
-  
   .navegation {
     position: fixed;
     top: 90px;
@@ -1357,111 +1438,120 @@ body.light-mode footer p {
     transition: all 0.4s ease;
     border: 1px solid rgba(255, 51, 102, 0.2);
   }
-  
   .navegation.active {
     transform: scaleY(1);
     opacity: 1;
   }
-  
   .navegation li {
     width: 100%;
   }
-  
   .navegation li a {
     width: 100%;
     justify-content: center;
+    padding: 1rem;
+    font-size: 1.1rem;
   }
-  
   .barra {
     display: block;
   }
-  
   .hero h1 {
     font-size: 2.2rem;
   }
-  
   .subtitle {
     font-size: 1.2rem;
   }
-  
   .conocimientos-section {
-    padding: 2rem;
+    padding: 1.5rem;
   }
-  
   .tecnologia {
     width: 110px;
     height: 110px;
   }
-  
   .tecnologia i {
     font-size: 2.5rem;
   }
-  
   .tecnologia span {
     font-size: 0.8rem;
   }
-  
   .proyectos-contenedor {
     grid-template-columns: 1fr;
   }
-  
   .contenido-sobre-mi {
     padding: 2rem;
   }
-  
   .titulo {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
-  
+  .titulo::before, .contact h2::before, .proje h2::before {
+    display: none;
+  }
   .subtitulo {
     font-size: 1.5rem;
   }
-  
   .parrafo {
     font-size: 1rem;
     padding-left: 1.5rem;
   }
-  
   .contact-form {
     padding: 2rem;
   }
-  
   .redes a {
     width: 55px;
     height: 55px;
     font-size: 1.5rem;
     border-radius: 18px;
   }
-  
   .floating-controls {
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     gap: 10px;
   }
-  
   .theme-toggle,
   .cv-download {
     width: 45px;
     height: 45px;
     font-size: 1.2rem;
   }
-  
   .cv-download {
     width: 50px;
     height: 50px;
   }
-  
   .cv-download i {
     font-size: 1.5rem;
   }
-  
   .cv-download span {
     font-size: 0.6rem;
   }
-  
-  .theme-toggle::after,
-  .cv-download::after {
-    display: none;
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .cta-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+  .conocimientos-contenedor {
+    gap: 1rem;
+  }
+  .tecnologia {
+    width: 95px;
+    height: 95px;
+  }
+  .tecnologia i {
+    font-size: 2rem;
+  }
+  .proyecto {
+    padding: 1.5rem;
+  }
+  .imagen-proyecto {
+    width: 100px;
+    height: 100px;
+  }
+  .habilidad {
+    padding: 1.2rem 0.8rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -1469,44 +1559,89 @@ body.light-mode footer p {
   .hero h1 {
     font-size: 1.8rem;
   }
-  
   .cta-button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
   }
-  
   .hero-image {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
   }
-  
   .tecnologia {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
   }
-  
   .tecnologia i {
-    font-size: 2rem;
-  }
-  
-  .conocimientos-section h3 {
     font-size: 1.8rem;
   }
-  
+  .conocimientos-section h3 {
+    font-size: 1.6rem;
+  }
   .proje h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
-  
-  .imagen-proyecto {
-    width: 100px;
-    height: 100px;
+  .contenido-sobre-mi {
+    padding: 1.5rem;
   }
-  
-  .proyecto h4 {
-    font-size: 1.1rem;
+  .titulo {
+    font-size: 1.8rem;
   }
-  
+  .subtitulo {
+    font-size: 1.3rem;
+  }
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+  .contact-form {
+    padding: 1.5rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.9rem 1.2rem;
+  }
   .contact-form button {
     font-size: 1rem;
+    padding: 1rem;
+  }
+  .redes {
+    gap: 0.8rem;
+  }
+  .redes a {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    border-radius: 15px;
+  }
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero-image {
+    width: 160px;
+    height: 160px;
+  }
+  .tecnologia {
+    width: 75px;
+    height: 75px;
+  }
+  .tecnologia i {
+    font-size: 1.5rem;
+  }
+  .tecnologia span {
+    font-size: 0.7rem;
+  }
+  .cta-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .redes a {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
   }
 }
