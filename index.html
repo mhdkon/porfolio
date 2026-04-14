@@ -5,8 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Kone - Full Stack Developer</title>
 
-    <!-- Estilos -->
+    <!-- Estilos externos (tu CSS) -->
     <link rel="stylesheet" href="estilo.css">
+
+    <!-- Estilos adicionales para las nuevas mejoras (puedes moverlos a tu CSS) -->
+    <style>
+        /* Botones de proyecto */
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-github, .btn-demo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+            background: var(--bg-secondary, #2d2d2d);
+            color: var(--text, white);
+        }
+        .btn-github {
+            background: #24292e;
+            color: white;
+        }
+        .btn-github:hover {
+            background: #3a3f44;
+            transform: translateY(-2px);
+        }
+        .btn-demo {
+            background: var(--primary, #0d6efd);
+            color: white;
+        }
+        .btn-demo:hover {
+            background: #0b5ed7;
+            transform: translateY(-2px);
+        }
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            .project-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-github, .btn-demo {
+                justify-content: center;
+            }
+        }
+        /* Mejora de espaciado en tarjetas de proyecto */
+        .proyecto {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .proyecto p {
+            flex-grow: 1;
+        }
+        /* Ajuste para el tema claro (si tu CSS ya lo maneja, puedes quitar) */
+        body.light-mode .btn-github {
+            background: #24292e;
+            color: white;
+        }
+        body.light-mode .btn-demo {
+            background: var(--primary, #0d6efd);
+        }
+    </style>
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,21 +87,17 @@
 
     <script defer src="javascript.js"></script>
 </head>
-
 <body>
 
 <!-- NAV -->
 <header>
     <nav>
         <div class="logo">Mohamed Kone</div>
-
-        <!-- Menú hamburguesa -->
         <div class="barra">
             <div class="linea1"></div>
             <div class="linea2"></div>
             <div class="linea3"></div>
         </div>
-
         <ul class="navegation">
             <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="#proyectos"><i class="fas fa-code-branch"></i> Proyectos</a></li>
@@ -48,7 +112,7 @@
     <button class="theme-toggle" aria-label="Cambiar tema">
         <i class="fas fa-moon"></i>
     </button>
-    <a href="img/cv-mohamed-kone.pdf" download class="cv-download">
+    <a href="files/cv-mohamed-kone.pdf" download class="cv-download">
         <i class="fas fa-file-pdf"></i>
         <span>CV</span>
     </a>
@@ -58,210 +122,138 @@
 <section id="inicio" class="hero">
     <div class="hero-content">
         <h1 class="animado">Hola, soy <span class="highlight">MOHAMED KONE</span></h1>
-
         <p class="subtitle animado retraso-1">
             Desarrollador Full Stack especializado en React, Node.js y PostgreSQL
         </p>
-
         <p class="hero-description animado retraso-2">
             Construyo páginas web completas con autenticación, APIs y bases de datos.
             Busco mi primera oportunidad como desarrollador junior.
-               <h3>¡disponible para trabajar en madrid y en remoto!</h3> 
         </p>
-
+        <h3>¡disponible para trabajar en Madrid y en remoto!</h3>
         <div class="hero-buttons animado retraso-3">
             <a href="#proyectos" class="cta-button">Ver proyectos</a>
             <a href="img/cv-mohamed-kone.pdf" download class="cta-button">Descargar CV</a>
         </div>
     </div>
-
     <div class="hero-image animado retraso-4">
-        <img src="img/WhatsApp Image k.jpeg" alt="Foto de perfil">
+        <img src="img/Image k.jpeg" alt="Foto de perfil">
     </div>
 </section>
 
-<!-- SERVICIOS (adaptado como tecnologías) -->
+<!-- TECNOLOGÍAS -->
 <section class="conocimientos-section animado">
     <h3>Tecnologías</h3>
-
     <div class="conocimientos-contenedor">
-        <div class="tecnologia animado retraso-1">
-            <i class="fab fa-html5"></i>
-            <span>HTML</span>
-        </div>
-        <div class="tecnologia animado retraso-2">
-            <i class="fab fa-css3-alt"></i>
-            <span>CSS</span>
-        </div>
-        <div class="tecnologia animado retraso-3">
-            <i class="fab fa-js"></i>
-            <span>JavaScript</span>
-        </div>
-        <div class="tecnologia animado retraso-4">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-        </div>
-        <div class="tecnologia animado retraso-5">
-            <i class="fab fa-node"></i>
-            <span>Node.js</span>
-        </div>
-        <div class="tecnologia animado retraso-6">
-            <i class="fas fa-database"></i>
-            <span>Express</span>
-        </div>
-        <div class="tecnologia animado retraso-7">
-            <i class="fas fa-database"></i>
-            <span>PostgreSQL</span>
-        </div>
-        <div class="tecnologia animado retraso-8">
-            <i class="fas fa-database"></i>
-            <span>MongoDB</span>
-        </div>
-        <div class="tecnologia animado retraso-9">
-            <i class="fas fa-lock"></i>
-            <span>JWT</span>
-        </div>
-        <div class="tecnologia animado retraso-10">
-            <i class="fas fa-shield-alt"></i>
-            <span>Bcrypt</span>
-        </div>
-        <div class="tecnologia animado retraso-11">
-            <i class="fab fa-git-alt"></i>
-            <span>Git</span>
-        </div>
+        <div class="tecnologia animado retraso-1"><i class="fab fa-html5"></i><span>HTML</span></div>
+        <div class="tecnologia animado retraso-2"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+        <div class="tecnologia animado retraso-3"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="tecnologia animado retraso-4"><i class="fab fa-react"></i><span>React</span></div>
+        <div class="tecnologia animado retraso-5"><i class="fab fa-node"></i><span>Node.js</span></div>
+        <div class="tecnologia animado retraso-6"><i class="fas fa-database"></i><span>Express</span></div>
+        <div class="tecnologia animado retraso-7"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+        <div class="tecnologia animado retraso-8"><i class="fas fa-database"></i><span>MongoDB</span></div>
+        <div class="tecnologia animado retraso-9"><i class="fas fa-lock"></i><span>JWT</span></div>
+        <div class="tecnologia animado retraso-10"><i class="fas fa-shield-alt"></i><span>Bcrypt</span></div>
+        <div class="tecnologia animado retraso-11"><i class="fab fa-git-alt"></i><span>Git</span></div>
     </div>
 </section>
 
-<!-- PROYECTOS -->
+<!-- PROYECTOS MEJORADOS -->
 <section id="proyectos" class="proje">
     <h2 class="animado">Mis Proyectos</h2>
-
     <div class="proyectos-contenedor">
 
-        <!-- LOGIN -->
-        <a href="https://frontend-tarea.onrender.com/" target="_blank" class="proyecto animado retraso-1">
+        <!-- Proyecto 1: Autenticación -->
+        <div class="proyecto animado retraso-1">
             <div class="imagen-proyecto">
-                <img src="img/login.avif" alt="Login">
+                <img src="img/login.avif" alt="Sistema de autenticación">
             </div>
-
             <h4>Sistema de autenticación Full Stack</h4>
-
             <p>
-                Registro, login con JWT y contraseñas encriptadas con Bcrypt.
+                <strong>Problema que resuelve:</strong> Muchas aplicaciones necesitan registro y login seguros. Implementé autenticación con JWT y contraseñas encriptadas con Bcrypt.<br>
+                <strong>Aprendizaje:</strong> Manejo de sesiones, protección de rutas, almacenamiento de tokens y cómo funciona el hashing de contraseñas.<br>
+                <strong>Decisión técnica:</strong> Usé PostgreSQL por su fiabilidad con relaciones de usuarios y transacciones.
             </p>
-
             <div class="tech">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
+                <span>React</span> <span>Node.js</span> <span>PostgreSQL</span> <span>JWT</span> <span>Bcrypt</span>
             </div>
-        </a>
+            <div class="project-links">
+                <a href="https://github.com/mhdkon/estatico" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
+                <a href="https://frontend-tarea.onrender.com/" target="_blank" class="btn-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            </div>
+        </div>
 
-        <!-- TIENDA -->
-        <a href="https://tienda-frontend-1.onrender.com" target="_blank" class="proyecto animado retraso-2">
+        <!-- Proyecto 2: Tienda Frontend -->
+        <div class="proyecto animado retraso-2">
             <div class="imagen-proyecto">
-                <img src="img/WhatsApp Image z.jpeg" alt="Tienda">
+                <img src="img/Image z.jpeg" alt="Tienda online">
             </div>
-
-            <h4>Tienda Frontend</h4>
-
+            <h4>Tienda Frontend con carrito</h4>
             <p>
-                Aplicación de tienda con interfaz moderna y gestión de productos.
+                <strong>Problema:</strong> Los e-commerce necesitan una interfaz intuitiva y un carrito de compras dinámico. Construí una experiencia de usuario fluida.<br>
+                <strong>Aprendizaje:</strong> Estado global con Context API, persistencia de datos con localStorage y manejo de promesas para consumir APIs.<br>
+                <strong>Decisión:</strong> Separé la lógica de productos y carrito para facilitar la integración futura con un backend real.
             </p>
-
             <div class="tech">
-                <span>React</span>
-                <span>CSS</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>bcrypt</span>
+                <span>React</span> <span>CSS Modules</span> <span>Context API</span>
             </div>
-        </a>
+            <div class="project-links">
+                <a href="https://github.com/mhdkon/tienda-frontend" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
+                <a href="https://tienda-frontend-1.onrender.com" target="_blank" class="btn-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            </div>
+        </div>
 
-        <!-- API -->
-        <a href="https://api-colores-grnq.onrender.com" target="_blank" class="proyecto animado retraso-3">
+        <!-- Proyecto 3: API de Colores -->
+        <div class="proyecto animado retraso-3">
             <div class="imagen-proyecto">
-                <img src="img/WhatsApp Image c.jpeg" alt="API">
+                <img src="img/Image c.jpeg" alt="API REST de colores">
             </div>
-
-            <h4>API de Colores</h4>
-
+            <h4>API REST de Colores (CRUD completo)</h4>
             <p>
-                API REST con endpoints para gestionar colores (CRUD).
+                <strong>Problema:</strong> Aprender a construir una API desde cero con operaciones CRUD. Desarrollé endpoints para gestionar colores.<br>
+                <strong>Aprendizaje:</strong> Métodos HTTP (GET, POST, PUT, DELETE), manejo de errores, validación de datos y pruebas con Postman.<br>
+                <strong>Decisión:</strong> Usé Express sin ORM para dominar SQL puro y conexión directa a PostgreSQL.
             </p>
-
             <div class="tech">
-                <span>Node.js</span>
-                <span>Express</span>
+                <span>Node.js</span> <span>Express</span> <span>PostgreSQL</span>
             </div>
-        </a>
+            <div class="project-links">
+                <a href="https://github.com/mhdkon/todo-colores" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
+                <a href="https://api-colores-grnq.onrender.com" target="_blank" class="btn-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            </div>
+        </div>
 
     </div>
 </section>
 
-<!-- SOBRE MI -->
+<!-- SOBRE MÍ MEJORADO -->
 <section id="sobre-mi" class="seccion-sobre-mi">
     <div class="contenido-sobre-mi animado">
         <h2 class="titulo">Sobre mí</h2>
-
         <p class="parrafo animado retraso-1">
-            Soy desarrollador Full Stack en formación con experiencia en React, Node.js y bases de datos.
-            Me apasiona crear aplicaciones completas y seguir aprendiendo nuevas tecnologías.
+            Soy desarrollador Full Stack autodidacta, con proyectos reales desplegados en la nube. Me especializo en React, Node.js y bases de datos relacionales. Me encanta crear aplicaciones completas, desde el diseño del frontend hasta la lógica del backend y la base de datos.
         </p>
-        
         <p class="parrafo animado retraso-2">
-            Actualmente busco mi primera oportunidad como desarrollador junior para poder 
-            aportar mis conocimientos y seguir creciendo profesionalmente en un entorno colaborativo.
+            Actualmente busco mi primera oportunidad como desarrollador junior para aportar mis habilidades en un equipo ágil y seguir creciendo profesionalmente. Estoy disponible para trabajar en Madrid o en remoto.
         </p>
-        
         <h3 class="subtitulo animado retraso-3">¿Qué me define?</h3>
-        
-        <p class="parrafo animado retraso-4">
-            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i>
-            Autodidacta y con muchas ganas de aprender
-        </p>
-        
-        <p class="parrafo animado retraso-5">
-            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i>
-            Trabajo en equipo y comunicación efectiva
-        </p>
-        
-        <p class="parrafo animado retraso-6">
-            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i>
-            Resolución de problemas y atención al detalle
-        </p>
+        <p class="parrafo animado retraso-4"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Autodidacta y con muchas ganas de aprender cada día</p>
+        <p class="parrafo animado retraso-5"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Trabajo en equipo y comunicación efectiva</p>
+        <p class="parrafo animado retraso-6"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Resolución de problemas y atención al detalle</p>
+        <p class="parrafo animado retraso-7"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Pasión por el código limpio y las buenas prácticas</p>
     </div>
 </section>
 
 <!-- HABILIDADES -->
 <section class="seccion-habilidades">
     <h2 class="titulo-habilidades animado">Habilidades</h2>
-    
     <div class="contenedor-habilidades">
-        <div class="habilidad animado retraso-1">
-            <i class="fas fa-code"></i>
-            <span>Frontend Development</span>
-        </div>
-        <div class="habilidad animado retraso-2">
-            <i class="fas fa-server"></i>
-            <span>Backend Development</span>
-        </div>
-        <div class="habilidad animado retraso-3">
-            <i class="fas fa-database"></i>
-            <span>Bases de Datos</span>
-        </div>
-        <div class="habilidad animado retraso-4">
-            <i class="fas fa-cloud"></i>
-            <span>APIs REST</span>
-        </div>
-        <div class="habilidad animado retraso-5">
-            <i class="fas fa-mobile-alt"></i>
-            <span>Responsive Design</span>
-        </div>
-        <div class="habilidad animado retraso-6">
-            <i class="fas fa-git-alt"></i>
-            <span>Control de Versiones</span>
-        </div>
+        <div class="habilidad animado retraso-1"><i class="fas fa-code"></i><span>Frontend Development</span></div>
+        <div class="habilidad animado retraso-2"><i class="fas fa-server"></i><span>Backend Development</span></div>
+        <div class="habilidad animado retraso-3"><i class="fas fa-database"></i><span>Bases de Datos</span></div>
+        <div class="habilidad animado retraso-4"><i class="fas fa-cloud"></i><span>APIs REST</span></div>
+        <div class="habilidad animado retraso-5"><i class="fas fa-mobile-alt"></i><span>Responsive Design</span></div>
+        <div class="habilidad animado retraso-6"><i class="fas fa-git-alt"></i><span>Control de Versiones</span></div>
     </div>
 </section>
 
@@ -271,35 +263,25 @@
     <p class="animado retraso-1" style="color: var(--gray); margin: 2rem 0; font-size: 1.2rem;">
         Estoy disponible para trabajar y seguir creciendo profesionalmente.
     </p>
-
-    <a href="mailto:mhdkon01@alumnos.cei.es" class="cta-button animado retraso-2">
+    <a href="mailto:mhdkon01@gmail.com" class="cta-button animado retraso-2">
         Contactar conmigo
     </a>
 </section>
 
-<!-- CONTACTO -->
+<!-- CONTACTO CON FORMULARIO FUNCIONAL -->
 <section id="contacto" class="contact">
     <h2 class="animado">Contacto</h2>
-
-    <form action="https://formspree.io/f/tu-email-aqui" method="POST" class="contact-form animado retraso-1">
+    <!-- IMPORTANTE: Cambia 'mqkrjkzj' por tu ID real de Formspree -->
+    <form action="https://formspree.io/f/mqkrjkzj" method="POST" class="contact-form animado retraso-1">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="email" name="email" placeholder="Email" required>
         <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-        <button type="submit">
-            <i class="fas fa-paper-plane"></i>
-            Enviar mensaje
-        </button>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
     </form>
-
     <div class="redes animado retraso-2">
-        <a href="https://github.com/mhdkon" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        <a href="https://mail.google.com/mail/?view=cm&to=mhdkon01@gmail.com" target="_blank">
-    <i class="fas fa-envelope"></i>
-</a>
+        <a href="https://github.com/mhdkon" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:mhdkon01@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
 </section>
 
@@ -319,25 +301,22 @@
 </div>
 
 <script>
-    // Script básico para el menú hamburguesa y tema
     document.addEventListener('DOMContentLoaded', function() {
+        // Menú hamburguesa
         const barra = document.querySelector('.barra');
         const nav = document.querySelector('.navegation');
-        
         if (barra) {
             barra.addEventListener('click', function() {
                 this.classList.toggle('active');
                 nav.classList.toggle('active');
             });
         }
-        
-        // Cambiar tema
+
+        // Tema oscuro/claro
         const themeToggle = document.querySelector('.theme-toggle');
         const icon = themeToggle.querySelector('i');
-        
         themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('light-mode');
-            
             if (document.body.classList.contains('light-mode')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
@@ -346,7 +325,7 @@
                 icon.classList.add('fa-moon');
             }
         });
-        
+
         // Header scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');

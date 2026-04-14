@@ -1645,3 +1645,86 @@ body.light-mode footer p {
     font-size: 1.2rem;
   }
 }
+
+
+
+
+/* ===== BOTONES DE PROYECTO (GITHUB Y DEMO) ===== */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-github, .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-github {
+    background: #24292e;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-github:hover {
+    background: #3a3f44;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-demo {
+    background: var(--gradient-1);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 51, 102, 0.3);
+}
+
+.btn-demo:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 51, 102, 0.5);
+}
+
+.btn-github i, .btn-demo i {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-github:hover i, .btn-demo:hover i {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Modo claro */
+body.light-mode .btn-github {
+    background: #24292e;
+    color: white;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .btn-demo {
+    background: var(--gradient-1);
+    color: white;
+}
+
+/* Ajuste para móvil dentro de las tarjetas */
+@media (max-width: 768px) {
+    .project-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+    .btn-github, .btn-demo {
+        justify-content: center;
+        padding: 0.7rem 1rem;
+    }
+}
