@@ -1,28 +1,22 @@
 /* ============================================
-   VARIABLES Y CONFIGURACIÓN AVANZADA
+   VARIABLES Y CONFIGURACIÓN GLOBAL
    ============================================ */
 :root {
-    /* Colores modernos */
     --primary: #00d4ff;
     --primary-dark: #00a8d4;
     --primary-light: #33e9ff;
     --secondary: #ff006e;
     --success: #00f4a1;
-    --accent: #00d4ff;
     
-    /* Fondos con gradientes */
     --bg-primary: #0a0e27;
     --bg-secondary: #0f1535;
     --bg-tertiary: #151d3c;
     --bg-glass: rgba(15, 21, 53, 0.7);
     
-    /* Texto */
     --text: #ffffff;
     --text-secondary: #b0c4de;
     --text-tertiary: #8892b0;
-    --gray: #6b7280;
     
-    /* Bordes y sombras */
     --border-color: rgba(0, 212, 255, 0.1);
     --border-color-hover: rgba(0, 212, 255, 0.3);
     
@@ -33,19 +27,15 @@
     
     --glow-blue: 0 0 20px rgba(0, 212, 255, 0.4);
     --glow-blue-lg: 0 0 40px rgba(0, 212, 255, 0.6);
-    --glow-pink: 0 0 20px rgba(255, 0, 110, 0.3);
     
-    /* Transiciones */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Radio de borde */
     --border-radius: 12px;
     --border-radius-lg: 20px;
     --border-radius-xl: 30px;
 }
 
-/* Tema claro */
 body.light-mode {
     --bg-primary: #f8f9fa;
     --bg-secondary: #ffffff;
@@ -58,17 +48,9 @@ body.light-mode {
     --border-color-hover: rgba(0, 212, 255, 0.4);
 }
 
-/* ============================================
-   RESET Y ESTILOS BASE AVANZADOS
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-*::before,
-*::after {
     box-sizing: border-box;
 }
 
@@ -86,10 +68,8 @@ body {
     line-height: 1.6;
     transition: var(--transition-slow);
     overflow-x: hidden;
-    position: relative;
 }
 
-/* Fondo animado */
 body::before {
     content: '';
     position: fixed;
@@ -104,9 +84,6 @@ body::before {
     z-index: -1;
 }
 
-/* ============================================
-   HEADER Y NAVEGACIÓN PREMIUM
-   ============================================ */
 header {
     background: rgba(15, 21, 53, 0.85);
     backdrop-filter: blur(20px);
@@ -117,12 +94,10 @@ header {
     top: 0;
     z-index: 1000;
     transition: var(--transition);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 header.scrolled {
     box-shadow: var(--shadow);
-    border-bottom-color: var(--border-color-hover);
     padding: 0.5rem 0;
 }
 
@@ -143,20 +118,7 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -1px;
     text-transform: uppercase;
-    position: relative;
-}
-
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
-    border-radius: 10px;
 }
 
 .navegation {
@@ -168,16 +130,15 @@ nav {
 .navegation li a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
     transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.85rem;
 }
 
 .navegation li a::before {
@@ -187,9 +148,8 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     transition: var(--transition);
-    border-radius: 10px;
 }
 
 .navegation li a:hover {
@@ -201,19 +161,17 @@ nav {
     width: 100%;
 }
 
-/* Menú hamburguesa */
 .barra {
     display: none;
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
-    z-index: 1001;
 }
 
 .barra div {
     width: 25px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     border-radius: 2px;
     transition: var(--transition);
 }
@@ -230,9 +188,6 @@ nav {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* ============================================
-   BOTONES FLOTANTES PREMIUM
-   ============================================ */
 .floating-controls {
     position: fixed;
     bottom: 40px;
@@ -248,7 +203,7 @@ nav {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
@@ -259,21 +214,8 @@ nav {
     transition: var(--transition);
     box-shadow: var(--glow-blue), var(--shadow-lg);
     text-decoration: none;
-    flex-direction: column;
     position: relative;
     overflow: hidden;
-}
-
-.theme-toggle::before,
-.cv-download::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: var(--transition);
 }
 
 .theme-toggle:hover,
@@ -282,20 +224,12 @@ nav {
     box-shadow: var(--glow-blue-lg), var(--shadow-xl);
 }
 
-.theme-toggle:hover::before,
-.cv-download:hover::before {
-    left: 100%;
-}
-
 .cv-download span {
     font-size: 0.6rem;
     margin-top: 2px;
     font-weight: 700;
 }
 
-/* ============================================
-   SECCIÓN HERO ÉPICA
-   ============================================ */
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -321,41 +255,22 @@ nav {
     animation: float 6s ease-in-out infinite;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 0, 110, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(50px);
-    animation: float 8s ease-in-out infinite reverse;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
 .hero-content h1 {
     font-size: 4rem;
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
+    background: linear-gradient(135deg, var(--text), var(--text-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .hero-content h1 .highlight {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
     filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
 }
 
@@ -364,7 +279,6 @@ nav {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
 }
 
 .hero-content .hero-description {
@@ -382,17 +296,6 @@ nav {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.hero-content h3::before {
-    content: '';
-    width: 30px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
-    border-radius: 10px;
 }
 
 .hero-buttons {
@@ -403,7 +306,7 @@ nav {
 
 .cta-button {
     padding: 1.1rem 2.5rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     text-decoration: none;
     border-radius: var(--border-radius-xl);
@@ -417,20 +320,7 @@ nav {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
     box-shadow: var(--glow-blue), var(--shadow);
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: var(--transition);
 }
 
 .cta-button:hover {
@@ -438,20 +328,10 @@ nav {
     box-shadow: var(--glow-blue-lg), var(--shadow-xl);
 }
 
-.cta-button:hover::before {
-    left: 100%;
-}
-
-.cta-button:active {
-    transform: translateY(-1px);
-}
-
 .hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 2;
 }
 
 .hero-image img {
@@ -462,34 +342,18 @@ nav {
     object-fit: cover;
     transition: var(--transition);
     border: 2px solid var(--border-color);
-    backdrop-filter: blur(10px);
 }
 
 .hero-image img:hover {
-    transform: scale(1.08) rotateY(5deg);
+    transform: scale(1.08);
     box-shadow: var(--glow-blue-lg), var(--shadow-xl);
-    border-color: var(--border-color-hover);
 }
 
-/* ============================================
-   SECCIÓN TECNOLOGÍAS AVANZADA
-   ============================================ */
 .conocimientos-section {
-    background: linear-gradient(180deg, rgba(15, 21, 53, 0) 0%, rgba(0, 212, 255, 0.05) 50%, rgba(15, 21, 53, 0) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 212, 255, 0.05) 50%, transparent 100%);
     padding: 6rem 5%;
     text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-.conocimientos-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 .conocimientos-section h3 {
@@ -515,41 +379,23 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 2.5rem 1.5rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(15, 21, 53, 0.5));
     border-radius: var(--border-radius-lg);
     transition: var(--transition);
     border: 2px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
     cursor: pointer;
 }
 
-.tecnologia::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
 .tecnologia:hover {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(15, 21, 53, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(15, 21, 53, 0.7));
     transform: translateY(-12px);
     box-shadow: var(--glow-blue), var(--shadow-lg);
     border-color: var(--border-color-hover);
 }
 
-.tecnologia:hover::before {
-    opacity: 1;
-}
-
 .tecnologia i {
     font-size: 3rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -559,8 +405,8 @@ nav {
 }
 
 .tecnologia:hover i {
-    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
     transform: scale(1.2);
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
 }
 
 .tecnologia span {
@@ -569,28 +415,12 @@ nav {
     color: var(--text);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    position: relative;
-    z-index: 2;
 }
 
-/* ============================================
-   SECCIÓN PROYECTOS PREMIUM
-   ============================================ */
 .proje {
     padding: 6rem 5%;
     max-width: 1600px;
     margin: 0 auto;
-    position: relative;
-}
-
-.proje::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 .proje h2 {
@@ -610,7 +440,7 @@ nav {
 }
 
 .proyecto {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(15, 21, 53, 0.5));
     border-radius: var(--border-radius-lg);
     padding: 2.5rem;
     border: 2px solid var(--border-color);
@@ -629,37 +459,21 @@ nav {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-slow);
-}
-
-.proyecto::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: var(--transition-slow);
 }
 
 .proyecto:hover {
     transform: translateY(-15px);
     box-shadow: var(--glow-blue-lg), var(--shadow-xl);
     border-color: var(--border-color-hover);
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(15, 21, 53, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(15, 21, 53, 0.7));
 }
 
 .proyecto:hover::before {
     transform: scaleX(1);
-}
-
-.proyecto:hover::after {
-    opacity: 1;
 }
 
 .imagen-proyecto {
@@ -668,7 +482,6 @@ nav {
     border-radius: var(--border-radius);
     overflow: hidden;
     margin-bottom: 2rem;
-    position: relative;
     border: 2px solid var(--border-color);
 }
 
@@ -710,7 +523,7 @@ nav {
 }
 
 .tech span {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -723,7 +536,7 @@ nav {
 }
 
 .tech span:hover {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.1));
     border-color: var(--primary);
     box-shadow: var(--glow-blue);
 }
@@ -749,7 +562,6 @@ nav {
     font-weight: 700;
     transition: var(--transition);
     text-decoration: none;
-    border: 2px solid transparent;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     position: relative;
@@ -758,64 +570,31 @@ nav {
 }
 
 .btn-github {
-    background: linear-gradient(135deg, #24292e 0%, #3a3f44 100%);
+    background: linear-gradient(135deg, #24292e, #3a3f44);
     color: white;
     box-shadow: var(--shadow);
 }
 
-.btn-github::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: var(--transition);
-}
-
 .btn-github:hover {
-    background: linear-gradient(135deg, #3a3f44 0%, #4a5055 100%);
+    background: linear-gradient(135deg, #3a3f44, #4a5055);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
-.btn-github:hover::before {
-    left: 100%;
-}
-
 .btn-demo {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     box-shadow: var(--glow-blue), var(--shadow);
 }
 
-.btn-demo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: var(--transition);
-}
-
 .btn-demo:hover {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     transform: translateY(-3px);
     box-shadow: var(--glow-blue-lg), var(--shadow-lg);
 }
 
-.btn-demo:hover::before {
-    left: 100%;
-}
-
-/* ============================================
-   SECCIÓN SOBRE MÍ ELEGANTE
-   ============================================ */
 .seccion-sobre-mi {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(15, 21, 53, 0.5));
     padding: 6rem 5%;
     max-width: 1200px;
     margin: 0 auto;
@@ -832,7 +611,7 @@ nav {
     right: -20%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1), transparent 70%);
     border-radius: 50%;
     filter: blur(40px);
     animation: float 8s ease-in-out infinite;
@@ -868,28 +647,12 @@ nav {
     margin: 3rem 0 2rem;
     color: var(--text);
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-/* ============================================
-   SECCIÓN HABILIDADES MEJORADA
-   ============================================ */
 .seccion-habilidades {
     padding: 6rem 5%;
     max-width: 1600px;
     margin: 0 auto;
-    position: relative;
-}
-
-.seccion-habilidades::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 .titulo-habilidades {
@@ -914,7 +677,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(15, 21, 53, 0.5));
     border-radius: var(--border-radius-lg);
     border: 2px solid var(--border-color);
     transition: var(--transition-slow);
@@ -931,7 +694,7 @@ nav {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-slow);
@@ -941,7 +704,7 @@ nav {
     transform: translateY(-12px);
     box-shadow: var(--glow-blue), var(--shadow-lg);
     border-color: var(--border-color-hover);
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(15, 21, 53, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(15, 21, 53, 0.7));
 }
 
 .habilidad:hover::before {
@@ -950,7 +713,7 @@ nav {
 
 .habilidad i {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -972,12 +735,9 @@ nav {
     letter-spacing: 0.5px;
 }
 
-/* ============================================
-   SECCIÓN CTA FINAL ÉPICA
-   ============================================ */
 .cta-final {
     padding: 5rem 5% !important;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 0, 110, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 110, 0.05));
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     position: relative;
@@ -991,7 +751,7 @@ nav {
     right: -30%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.08), transparent 70%);
     border-radius: 50%;
     filter: blur(40px);
     animation: float 6s ease-in-out infinite;
@@ -1014,15 +774,11 @@ nav {
     z-index: 2;
 }
 
-/* ============================================
-   SECCIÓN CONTACTO PROFESIONAL
-   ============================================ */
 .contact {
     padding: 6rem 5%;
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    position: relative;
 }
 
 .contact h2 {
@@ -1039,7 +795,7 @@ nav {
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 3.5rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(15, 21, 53, 0.5));
     padding: 3rem;
     border-radius: var(--border-radius-lg);
     border: 2px solid var(--border-color);
@@ -1048,7 +804,7 @@ nav {
 .contact-form input,
 .contact-form textarea {
     padding: 1.2rem;
-    background: linear-gradient(135deg, rgba(15, 21, 53, 0.8) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(15, 21, 53, 0.5));
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius);
     color: var(--text);
@@ -1066,13 +822,13 @@ nav {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary);
-    background: linear-gradient(135deg, rgba(15, 21, 53, 0.95) 0%, rgba(15, 21, 53, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(15, 21, 53, 0.7));
     box-shadow: var(--glow-blue), inset 0 0 20px rgba(0, 212, 255, 0.05);
 }
 
 .contact-form button {
     padding: 1.2rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border: none;
     border-radius: var(--border-radius-lg);
@@ -1087,28 +843,11 @@ nav {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: var(--glow-blue), var(--shadow);
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-form button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: var(--transition);
 }
 
 .contact-form button:hover {
     transform: translateY(-3px);
     box-shadow: var(--glow-blue-lg), var(--shadow-lg);
-}
-
-.contact-form button:hover::before {
-    left: 100%;
 }
 
 .redes {
@@ -1122,7 +861,7 @@ nav {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(15, 21, 53, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(15, 21, 53, 0.5));
     color: var(--primary);
     display: flex;
     align-items: center;
@@ -1138,7 +877,7 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     border-radius: 50%;
     z-index: -1;
     transform: scale(0);
@@ -1156,16 +895,12 @@ nav {
     transform: scale(1);
 }
 
-/* ============================================
-   FOOTER PREMIUM
-   ============================================ */
 footer {
-    background: linear-gradient(180deg, rgba(15, 21, 53, 0.5) 0%, rgba(15, 21, 53, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(15, 21, 53, 0.5), rgba(15, 21, 53, 0.8));
     border-top: 1px solid var(--border-color);
     text-align: center;
     color: var(--text-tertiary);
     padding: 3rem 5% !important;
-    position: relative;
 }
 
 footer p {
@@ -1175,9 +910,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* ============================================
-   ANIMACIONES AVANZADAS
-   ============================================ */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -1198,26 +930,6 @@ footer p {
     }
 }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes glow {
-    0%, 100% {
-        text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-    }
-    50% {
-        text-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
-    }
-}
-
 .animado {
     animation: fadeInUp 0.7s ease-out forwards;
     opacity: 0;
@@ -1235,16 +947,10 @@ footer p {
 .retraso-10 { animation-delay: 1s; }
 .retraso-11 { animation-delay: 1.1s; }
 
-/* ============================================
-   RESPONSIVE DESIGN AVANZADO
-   ============================================ */
-
-/* Tablets (1024px) */
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
         padding: 5rem 5%;
-        min-height: auto;
         gap: 3rem;
     }
 
@@ -1256,27 +962,12 @@ footer p {
         max-width: 350px;
     }
 
-    .conocimientos-contenedor {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 2rem;
-    }
-
-    .proyectos-contenedor {
-        grid-template-columns: 1fr;
-    }
-
-    .navegation {
-        gap: 2rem;
-    }
-
     .contenedor-habilidades {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Tablets pequeños (768px) */
 @media (max-width: 768px) {
-    /* Navegación */
     .barra {
         display: flex;
     }
@@ -1310,17 +1001,12 @@ footer p {
         justify-content: flex-start;
     }
 
-    /* Hero */
     .hero {
         padding: 3rem 5%;
     }
 
     .hero-content h1 {
         font-size: 2.2rem;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.2rem;
     }
 
     .hero-buttons {
@@ -1331,7 +1017,6 @@ footer p {
         width: 100%;
     }
 
-    /* Secciones */
     .conocimientos-section h3,
     .proje h2,
     .titulo,
@@ -1341,36 +1026,21 @@ footer p {
         font-size: 2.2rem;
     }
 
-    .conocimientos-contenedor {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1.5rem;
-    }
-
     .tecnologia {
         padding: 1.8rem 1rem;
-    }
-
-    .tecnologia i {
-        font-size: 2.2rem;
     }
 
     .proyecto {
         padding: 1.8rem;
     }
 
-    .imagen-proyecto {
-        height: 220px;
-    }
-
     .contenedor-habilidades {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
     .floating-controls {
         bottom: 25px;
         right: 25px;
-        gap: 12px;
     }
 
     .theme-toggle,
@@ -1388,17 +1058,11 @@ footer p {
         flex-direction: column;
     }
 
-    .btn-github,
-    .btn-demo {
-        min-width: auto;
-    }
-
     .seccion-sobre-mi {
         padding: 4rem 5%;
     }
 }
 
-/* Móviles (480px) */
 @media (max-width: 480px) {
     nav {
         padding: 0 4%;
@@ -1420,19 +1084,8 @@ footer p {
         font-size: 1.05rem;
     }
 
-    .hero-content .hero-description {
-        font-size: 0.95rem;
-    }
-
     .hero-image img {
         max-width: 220px;
-    }
-
-    .conocimientos-section,
-    .proje,
-    .seccion-habilidades,
-    .contact {
-        padding: 3rem 4%;
     }
 
     .conocimientos-contenedor {
@@ -1453,16 +1106,8 @@ footer p {
         padding: 1.3rem 0.8rem;
     }
 
-    .tecnologia i {
-        font-size: 1.8rem;
-    }
-
     .tecnologia span {
         font-size: 0.75rem;
-    }
-
-    .proyectos-contenedor {
-        grid-template-columns: 1fr;
     }
 
     .proyecto {
@@ -1473,28 +1118,12 @@ footer p {
         font-size: 1.1rem;
     }
 
-    .proyecto p {
-        font-size: 0.85rem;
-    }
-
-    .tech {
-        gap: 0.5rem;
-    }
-
     .tech span {
         font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
     }
 
     .contact-form {
         padding: 1.5rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-        font-size: 0.9rem;
-        padding: 0.9rem;
     }
 
     .redes {
@@ -1510,7 +1139,6 @@ footer p {
     .floating-controls {
         bottom: 15px;
         right: 15px;
-        gap: 8px;
     }
 
     .theme-toggle,
@@ -1529,16 +1157,11 @@ footer p {
         gap: 1.2rem;
     }
 
-    .habilidad {
-        padding: 2rem 1.5rem;
-    }
-
     .seccion-sobre-mi {
         padding: 2.5rem 4%;
     }
 }
 
-/* Ultra pequeños (320px) */
 @media (max-width: 320px) {
     .hero-content h1 {
         font-size: 1.5rem;
@@ -1546,8 +1169,28 @@ footer p {
 
     .conocimientos-contenedor {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
     }
 
     .navegation li {
-        padding: 0*
+        padding: 0.8rem 4%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+    border-radius: 10px;
+    border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-light), var(--primary));
+    box-shadow: var(--glow-blue);
+}
