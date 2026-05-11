@@ -3,340 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Kone - Full Stack Developer</title>
-
-    <!-- Estilos externos (tu CSS) -->
-    <link rel="stylesheet" href="estilo.css">
-
-    <!-- Estilos adicionales para las nuevas mejoras (puedes moverlos a tu CSS) -->
-    <style>
-        /* Botones de proyecto */
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-github, .btn-demo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: 0.3s;
-            text-decoration: none;
-            background: var(--bg-secondary, #2d2d2d);
-            color: var(--text, white);
-        }
-        .btn-github {
-            background: #24292e;
-            color: white;
-        }
-        .btn-github:hover {
-            background: #3a3f44;
-            transform: translateY(-2px);
-        }
-        .btn-demo {
-            background: var(--primary, #0d6efd);
-            color: white;
-        }
-        .btn-demo:hover {
-            background: #0b5ed7;
-            transform: translateY(-2px);
-        }
-        /* Ajustes responsivos */
-        @media (max-width: 768px) {
-            .project-links {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .btn-github, .btn-demo {
-                justify-content: center;
-            }
-        }
-        /* Mejora de espaciado en tarjetas de proyecto */
-        .proyecto {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .proyecto p {
-            flex-grow: 1;
-        }
-        /* Ajuste para el tema claro (si tu CSS ya lo maneja, puedes quitar) */
-        body.light-mode .btn-github {
-            background: #24292e;
-            color: white;
-        }
-        body.light-mode .btn-demo {
-            background: var(--primary, #0d6efd);
-        }
-    </style>
-
-    <!-- FontAwesome -->
+    <meta name="description" content="Portafolio de Mohamed Kone - Desarrollador Web Full Stack especializado en React, Node.js, Express y PostgreSQL">
+    <meta name="keywords" content="desarrollador web, frontend, backend, React, Node.js, JavaScript, Full Stack">
+    <meta name="author" content="Mohamed Kone">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Animaciones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilo.css">
     <script defer src="javascript.js"></script>
+    <title>Mohamed Kone | Desarrollador Full Stack</title>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body>
+    <!-- BOTONES FLOTANTES: TEMA OSCURO/CLARO + CV -->
+    <div class="floating-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <i class="fas fa-moon"></i>
+        </button>
+        <a href="img/cv-mohamed-kone.pdf" download class="cv-download" aria-label="Descargar CV">
+            <i class="fas fa-file-pdf"></i>
+            <span>CV</span>
+        </a>
+    </div>
 
-<!-- NAV -->
-<header>
-    <nav>
-        <div class="logo">Mohamed Kone</div>
-        <div class="barra">
-            <div class="linea1"></div>
-            <div class="linea2"></div>
-            <div class="linea3"></div>
+    <!-- HEADER Y NAVEGACIÓN -->
+    <header>
+        <nav>
+            <div class="logo">Mohamed Kone</div>
+            <ul class="navegation">
+                <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#proyectos"><i class="fas fa-code"></i> Proyectos</a></li>
+                <li><a href="#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+            <div class="barra">
+                <div class="linea1"></div>
+                <div class="linea2"></div>
+                <div class="linea3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Hola, soy <span class="highlight">MOHAMED KONE</span></h1>
+            <p class="subtitle">Desarrollador Web Full Stack</p>
+            <p class="descripcion">Especializado en React, Node.js, Express y PostgreSQL</p>
+            <a href="#proyectos" class="cta-button">Ver mis proyectos <i class="fas fa-arrow-right"></i></a>
         </div>
-        <ul class="navegation">
-            <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="#proyectos"><i class="fas fa-code-branch"></i> Proyectos</a></li>
-            <li><a href="#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
-            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-        </ul>
-    </nav>
-</header>
+        <div class="hero-image">
+            <img src="img/img2.jpg" alt="Mohamed Kone - Desarrollador Full Stack">
+        </div>
+    </section>
 
-<!-- BOTONES FLOTANTES -->
-<div class="floating-controls">
-    <button class="theme-toggle" aria-label="Cambiar tema">
-        <i class="fas fa-moon"></i>
-    </button>
-    <a href="files/cv-mohamed-kone.pdf" download class="cv-download">
-        <i class="fas fa-file-pdf"></i>
-        <span>CV</span>
-    </a>
-</div>
-
-<!-- HERO -->
-<section id="inicio" class="hero">
-    <div class="hero-content">
-        <h1 class="animado">Hola, soy <span class="highlight">MOHAMED KONE</span></h1>
-        <p class="subtitle animado retraso-1">
-            Desarrollador Full Stack especializado en React, Node.js y PostgreSQL
-        </p>
-        <p class="hero-description animado retraso-2">
-            Construyo páginas web completas con autenticación, APIs y bases de datos.
-            Busco mi primera oportunidad como desarrollador junior.
-        </p>
-        <h3>¡disponible para trabajar en Madrid y en remoto!</h3>
-        <div class="hero-buttons animado retraso-3">
-            <a href="#proyectos" class="cta-button">Ver proyectos</a>
-            <a href="img/cv-mohamed-kone.pdf" download class="cta-button">Descargar CV</a>
+    <!-- TECNOLOGÍAS -->
+    <div class="conocimientos-section">
+        <h3>Tecnologías que uso</h3>
+        <div class="conocimientos-contenedor">
+            <div class="tecnologia"><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="tecnologia"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tecnologia"><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="tecnologia"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="tecnologia"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="tecnologia"><i class="fas fa-server"></i><span>Express</span></div>
+            <div class="tecnologia"><i class="fas fa-database"></i><span>MongoDB</span></div>
+            <div class="tecnologia"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+            <div class="tecnologia"><i class="fas fa-code"></i><span>TypeScript</span></div>
+            <div class="tecnologia"><i class="fas fa-layer-group"></i><span>Next.js</span></div>
+            <div class="tecnologia"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="tecnologia"><i class="fas fa-lock"></i><span>Bcrypt</span></div>
+            <div class="tecnologia"><i class="fas fa-key"></i><span>JWT</span></div>
+            <div class="tecnologia"><i class="fab fa-aws"></i><span>AWS</span></div>
+            <div class="tecnologia"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="tecnologia"><i class="fas fa-server"></i><span>Django</span></div>
+            <div class="tecnologia"><i class="fas fa-rocket"></i><span>CI/CD</span></div>
         </div>
     </div>
-    <div class="hero-image animado retraso-4">
-        <img src="img/Image k.jpeg" alt="Foto de perfil">
-    </div>
-</section>
 
-<!-- TECNOLOGÍAS -->
-<section class="conocimientos-section animado">
-    <h3>Tecnologías</h3>
-    <div class="conocimientos-contenedor">
-        <div class="tecnologia animado retraso-1"><i class="fab fa-html5"></i><span>HTML</span></div>
-        <div class="tecnologia animado retraso-2"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-        <div class="tecnologia animado retraso-3"><i class="fab fa-js"></i><span>JavaScript</span></div>
-        <div class="tecnologia animado retraso-4"><i class="fab fa-react"></i><span>React</span></div>
-        <div class="tecnologia animado retraso-5"><i class="fab fa-node"></i><span>Node.js</span></div>
-        <div class="tecnologia animado retraso-6"><i class="fas fa-database"></i><span>Express</span></div>
-        <div class="tecnologia animado retraso-7"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
-        <div class="tecnologia animado retraso-8"><i class="fas fa-database"></i><span>MongoDB</span></div>
-        <div class="tecnologia animado retraso-9"><i class="fas fa-lock"></i><span>JWT</span></div>
-        <div class="tecnologia animado retraso-10"><i class="fas fa-shield-alt"></i><span>Bcrypt</span></div>
-        <div class="tecnologia animado retraso-11"><i class="fab fa-git-alt"></i><span>Git</span></div>
-    </div>
-</section>
-
-<!-- PROYECTOS MEJORADOS -->
-<section id="proyectos" class="proje">
-    <h2 class="animado">Mis Proyectos</h2>
-    <div class="proyectos-contenedor">
-
-        <!-- Proyecto 1: Autenticación -->
-        <div class="proyecto animado retraso-1">
-            <div class="imagen-proyecto">
-                <img src="img/login.avif" alt="Sistema de autenticación">
+    <!-- PROYECTOS - TARJETAS -->
+    <section id="proyectos" class="proje">
+        <h2>Proyectos <span>destacados</span></h2>
+        <p class="seccion-descripcion">Aplicaciones modernas, escalables y con código limpio</p>
+        <div class="proyectos-contenedor">
+            <!-- Proyecto 1 -->
+            <div class="proyecto-card">
+                <div class="proyecto-imagen">
+                    <img class="clickable-img" src="img/Screenshot 2026-05-06 at 13-08-09 frontend.png" alt="Software Inmobiliaria">
+                    <div class="overlay-proyecto">
+                        <a href="https://sofwareimobi.netlify.app/" target="_blank" class="btn-proyecto">Ver en vivo</a>
+                    </div>
+                </div>
+                <div class="proyecto-contenido">
+                    <h3>Software Inmobiliaria</h3>
+                    <p>Gestión completa de propiedades con autenticación segura y base de datos relacional.</p>
+                    <div class="proyecto-tags">
+                        <span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span>
+                    </div>
+                    <div class="proyecto-botones">
+                        <a href="https://sofwareimobi.netlify.app/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live</a>
+                        <a href="https://github.com/mhdkon" target="_blank" class="btn-code"><i class="fas fa-code"></i> Código</a>
+                    </div>
+                </div>
             </div>
-            <h4>Sistema de autenticación Full Stack</h4>
-            <p>
-                <strong>Problema que resuelve:</strong> Muchas aplicaciones necesitan registro y login seguros. Implementé autenticación con JWT y contraseñas encriptadas con Bcrypt.<br>
-                <strong>Aprendizaje:</strong> Manejo de sesiones, protección de rutas, almacenamiento de tokens y cómo funciona el hashing de contraseñas.<br>
-                <strong>Decisión técnica:</strong> Usé PostgreSQL por su fiabilidad con relaciones de usuarios y transacciones.
-            </p>
-            <div class="tech">
-                <span>React</span> <span>Node.js</span> <span>PostgreSQL</span> <span>JWT</span> <span>Bcrypt</span>
+
+            <!-- Proyecto 2 -->
+            <div class="proyecto-card">
+                <div class="proyecto-imagen">
+                    <img class="clickable-img" src="img/Image z.jpeg" alt="Tienda de Zapatos">
+                    <div class="overlay-proyecto">
+                        <a href="https://tienda-vite.netlify.app/" target="_blank" class="btn-proyecto">Ver en vivo</a>
+                    </div>
+                </div>
+                <div class="proyecto-contenido">
+                    <h3>Tienda de Zapatos - E‑commerce</h3>
+                    <p>Carrito dinámico, gestión de inventario y checkout funcional.</p>
+                    <div class="proyecto-tags">
+                        <span>React</span><span>Vite</span><span>Node.js</span><span>PostgreSQL</span>
+                    </div>
+                    <div class="proyecto-botones">
+                        <a href="https://tienda-vite.netlify.app/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live</a>
+                        <a href="https://github.com/mhdkon" target="_blank" class="btn-code"><i class="fas fa-code"></i> Código</a>
+                    </div>
+                </div>
             </div>
-            <div class="project-links">
-                <a href="https://github.com/mhdkon/estatico" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
-                <a href="https://frontend-tarea.onrender.com/" target="_blank" class="btn-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+
+            <!-- Proyecto 3 -->
+            <div class="proyecto-card">
+                <div class="proyecto-imagen">
+                    <img class="clickable-img" src="img/login.avif" alt="Login con Bcrypt">
+                    <div class="overlay-proyecto">
+                        <a href="https://frontend-tarea.onrender.com/" target="_blank" class="btn-proyecto">Ver en vivo</a>
+                    </div>
+                </div>
+                <div class="proyecto-contenido">
+                    <h3>Sistema de Login con JWT</h3>
+                    <p>Autenticación segura, encriptación de contraseñas y protección de rutas.</p>
+                    <div class="proyecto-tags">
+                        <span>React</span><span>Node.js</span><span>Bcrypt</span><span>JWT</span>
+                    </div>
+                    <div class="proyecto-botones">
+                        <a href="https://frontend-tarea.onrender.com/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live</a>
+                        <a href="https://github.com/mhdkon" target="_blank" class="btn-code"><i class="fas fa-code"></i> Código</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="proyecto-card">
+                <div class="proyecto-imagen">
+                    <img class="clickable-img" src="img/Image c.jpeg" alt="Generador de Colores">
+                    <div class="overlay-proyecto">
+                        <a href="https://frontend-colores.onrender.com/" target="_blank" class="btn-proyecto">Ver en vivo</a>
+                    </div>
+                </div>
+                <div class="proyecto-contenido">
+                    <h3>Generador de Colores</h3>
+                    <p>Paletas aleatorias, copia al portapapeles y diseño responsive.</p>
+                    <div class="proyecto-tags">
+                        <span>React</span><span>JavaScript</span><span>CSS3</span>
+                    </div>
+                    <div class="proyecto-botones">
+                        <a href="https://frontend-colores.onrender.com/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live</a>
+                        <a href="https://github.com/mhdkon" target="_blank" class="btn-code"><i class="fas fa-code"></i> Código</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Proyecto 2: Tienda Frontend -->
-        <div class="proyecto animado retraso-2">
-            <div class="imagen-proyecto">
-                <img src="img/Image z.jpeg" alt="Tienda online">
+    <!-- DETALLES DE PROYECTOS -->
+    <section class="seccion-detalles-proyectos">
+        <h2>Detalles de mis Proyectos</h2>
+        <p class="seccion-descripcion">Descubre qué hace especial cada uno de mis proyectos</p>
+        
+        <div class="detalles-contenedor">
+            <!-- Detalle Proyecto 1 -->
+            <div class="detalle-proyecto">
+                <div class="detalle-header">
+                    <h3><i class="fas fa-building"></i> Software Inmobiliaria</h3>
+                    <span class="estado-proyecto">Full Stack</span>
+                </div>
+                
+                <div class="detalle-descripcion">
+                    <p>
+                        Esta es una aplicación web completa para la gestión integral de propiedades inmobiliarias. 
+                        Desarrollé tanto el frontend como el backend, implementando todas las funcionalidades necesarias 
+                        para un sistema profesional de real estate.
+                    </p>
+                </div>
+
+                <div class="detalle-features">
+                    <h4>Características principales:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-lock-open"></i>
+                            <strong>Autenticación segura</strong>
+                            <p>Sistema de login con JWT y encriptación de contraseñas con Bcrypt</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-list"></i>
+                            <strong>CRUD completo</strong>
+                            <p>Crear, leer, actualizar y eliminar propiedades con interfaz intuitiva</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-database"></i>
+                            <strong>Base de datos relacional</strong>
+                            <p>PostgreSQL para almacenar información estructurada de propiedades</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-api"></i>
+                            <strong>API RESTful</strong>
+                            <p>Backend con Express.js siguiendo estándares REST profesionales</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <strong>Diseño responsive</strong>
+                            <p>Funciona perfectamente en desktop, tablet y dispositivos móviles</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Validaciones</strong>
+                            <p>Validaciones en frontend y backend para garantizar integridad de datos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-tecnologias">
+                    <h4>Stack Tecnológico:</h4>
+                    <div class="tech-stack">
+                        <div class="tech-group">
+                            <strong>Frontend:</strong> React, HTML5, CSS3, JavaScript
+                        </div>
+                        <div class="tech-group">
+                            <strong>Backend:</strong> Node.js, Express.js, JWT, Bcrypt
+                        </div>
+                        <div class="tech-group">
+                            <strong>Base de datos:</strong> PostgreSQL
+                        </div>
+                        <div class="tech-group">
+                            <strong>Hosting:</strong> Netlify (Frontend), Render (Backend)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-enlaces">
+                    <a href="https://sofwareimobi.netlify.app/" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-globe"></i> Ver proyecto en vivo
+                    </a>
+                    <a href="https://github.com/mhdkon" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-code-branch"></i> Repositorio GitHub
+                    </a>
+                </div>
             </div>
-            <h4>Tienda Frontend con carrito</h4>
-            <p>
-                <strong>Problema:</strong> Los e-commerce necesitan una interfaz intuitiva y un carrito de compras dinámico. Construí una experiencia de usuario fluida.<br>
-                <strong>Aprendizaje:</strong> Estado global con Context API, persistencia de datos con localStorage y manejo de promesas para consumir APIs.<br>
-                <strong>Decisión:</strong> Separé la lógica de productos y carrito para facilitar la integración futura con un backend real.
-            </p>
-            <div class="tech">
-                <span>React</span> <span>CSS Modules</span> <span>Context API</span>
+
+            <!-- Detalle Proyecto 2 -->
+            <div class="detalle-proyecto">
+                <div class="detalle-header">
+                    <h3><i class="fas fa-shopping-cart"></i> Tienda de Zapatos - E-commerce</h3>
+                    <span class="estado-proyecto">Full Stack</span>
+                </div>
+                
+                <div class="detalle-descripcion">
+                    <p>
+                        Plataforma completa de comercio electrónico especializada en venta de calzado. 
+                        Implementé un carrito de compras funcional, catálogo dinámico de productos y un 
+                        sistema de gestión de pedidos profesional.
+                    </p>
+                </div>
+
+                <div class="detalle-features">
+                    <h4>Características principales:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-shoe-prints"></i>
+                            <strong>Catálogo dinámico</strong>
+                            <p>Productos cargados desde base de datos con filtros y búsqueda avanzada</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <strong>Carrito inteligente</strong>
+                            <p>Sistema de carrito con cálculo automático de totales e impuestos</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-boxes"></i>
+                            <strong>Gestión de inventario</strong>
+                            <p>Control de stock de productos en tiempo real</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <strong>Build tool moderno</strong>
+                            <p>Vite para compilación rápida y bundle optimizado</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-credit-card"></i>
+                            <strong>Checkout seguro</strong>
+                            <p>Proceso de compra intuitivo y protegido</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-user-circle"></i>
+                            <strong>Gestión de usuarios</strong>
+                            <p>Sistema de cuentas para órdenes y perfiles personalizados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-tecnologias">
+                    <h4>Stack Tecnológico:</h4>
+                    <div class="tech-stack">
+                        <div class="tech-group">
+                            <strong>Frontend:</strong> React, Vite, CSS3, JavaScript
+                        </div>
+                        <div class="tech-group">
+                            <strong>Backend:</strong> Node.js, Express.js
+                        </div>
+                        <div class="tech-group">
+                            <strong>Base de datos:</strong> PostgreSQL
+                        </div>
+                        <div class="tech-group">
+                            <strong>Hosting:</strong> Netlify (Frontend), Render (Backend)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-enlaces">
+                    <a href="https://tienda-vite.netlify.app/" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-globe"></i> Ver tienda en vivo
+                    </a>
+                    <a href="https://github.com/mhdkon" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-code-branch"></i> Repositorio GitHub
+                    </a>
+                </div>
             </div>
-            <div class="project-links">
-                <a href="https://github.com/mhdkon/tienda-frontend" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
-                <a href="https://tienda-frontend-1.onrender.com" target="_blank" class="btn-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+
+            <!-- Detalle Proyecto 3 -->
+            <div class="detalle-proyecto">
+                <div class="detalle-header">
+                    <h3><i class="fas fa-sign-in-alt"></i> Sistema de Login con JWT</h3>
+                    <span class="estado-proyecto">Autenticación</span>
+                </div>
+                
+                <div class="detalle-descripcion">
+                    <p>
+                        Implementé un robusto sistema de autenticación con JWT, Bcrypt y rutas protegidas. 
+                        Este proyecto demuestra mi conocimiento en seguridad web y buenas prácticas de 
+                        autenticación en aplicaciones modernas.
+                    </p>
+                </div>
+
+                <div class="detalle-features">
+                    <h4>Características principales:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-lock"></i>
+                            <strong>Encriptación Bcrypt</strong>
+                            <p>Contraseñas hasheadas con algoritmo seguro de 10 rondas</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-key"></i>
+                            <strong>JWT Tokens</strong>
+                            <p>Tokens seguros con expiración y refresh token logic</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <strong>Rutas protegidas</strong>
+                            <p>Middleware de autenticación para proteger endpoints sensibles</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-user-plus"></i>
+                            <strong>Registro de usuarios</strong>
+                            <p>Sistema completo de registro con validaciones</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <strong>Logout seguro</strong>
+                            <p>Destrucción de tokens y limpieza de sesión</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>Manejo de errores</strong>
+                            <p>Gestión completa de errores de autenticación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-tecnologias">
+                    <h4>Stack Tecnológico:</h4>
+                    <div class="tech-stack">
+                        <div class="tech-group">
+                            <strong>Frontend:</strong> React, JavaScript, CSS3
+                        </div>
+                        <div class="tech-group">
+                            <strong>Backend:</strong> Node.js, Express.js
+                        </div>
+                        <div class="tech-group">
+                            <strong>Seguridad:</strong> JWT, Bcrypt, Cors
+                        </div>
+                        <div class="tech-group">
+                            <strong>Hosting:</strong> Render
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-enlaces">
+                    <a href="https://frontend-tarea.onrender.com/" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-globe"></i> Ver proyecto en vivo
+                    </a>
+                    <a href="https://github.com/mhdkon" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-code-branch"></i> Repositorio GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Detalle Proyecto 4 -->
+            <div class="detalle-proyecto">
+                <div class="detalle-header">
+                    <h3><i class="fas fa-palette"></i> Generador de Colores</h3>
+                    <span class="estado-proyecto">Frontend</span>
+                </div>
+                
+                <div class="detalle-descripcion">
+                    <p>
+                        Aplicación interactiva para generar paletas de colores aleatorias. 
+                        Este proyecto muestra mis habilidades en React, manipulación del DOM y 
+                        proporcionar una experiencia de usuario fluida y responsiva.
+                    </p>
+                </div>
+
+                <div class="detalle-features">
+                    <h4>Características principales:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-dice"></i>
+                            <strong>Generador aleatorio</strong>
+                            <p>Crea paletas de colores aleatorias con un clic</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-copy"></i>
+                            <strong>Copiar al portapapeles</strong>
+                            <p>Copia códigos HEX, RGB y HSL con un click</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <strong>Paletas guardadas</strong>
+                            <p>Guarda tus paletas favoritas localmente</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <strong>Diseño responsive</strong>
+                            <p>Funciona perfectamente en todos los dispositivos</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sliders-h"></i>
+                            <strong>Personalization</strong>
+                            <p>Ajusta colores individuales y bloquea los que te gusten</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-share-alt"></i>
+                            <strong>Compartir paletas</strong>
+                            <p>Comparte tus paletas favoritas en redes sociales</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-tecnologias">
+                    <h4>Stack Tecnológico:</h4>
+                    <div class="tech-stack">
+                        <div class="tech-group">
+                            <strong>Frontend:</strong> React, JavaScript, CSS3
+                        </div>
+                        <div class="tech-group">
+                            <strong>Storage:</strong> LocalStorage
+                        </div>
+                        <div class="tech-group">
+                            <strong>Librerías:</strong> React Hooks
+                        </div>
+                        <div class="tech-group">
+                            <strong>Hosting:</strong> Render
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detalle-enlaces">
+                    <a href="https://frontend-colores.onrender.com/" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-globe"></i> Ver generador en vivo
+                    </a>
+                    <a href="https://github.com/mhdkon" target="_blank" class="enlace-proyecto">
+                        <i class="fas fa-code-branch"></i> Repositorio GitHub
+                    </a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Proyecto 3: API de Colores -->
-        <div class="proyecto animado retraso-3">
-            <div class="imagen-proyecto">
-                <img src="img/Image c.jpeg" alt="API REST de colores">
-            </div>
-            <h4>API REST de Colores (CRUD completo)</h4>
-            <p>
-                <strong>Problema:</strong> Aprender a construir una API desde cero con operaciones CRUD. Desarrollé endpoints para gestionar colores.<br>
-                <strong>Aprendizaje:</strong> Métodos HTTP (GET, POST, PUT, DELETE), manejo de errores, validación de datos y pruebas con Postman.<br>
-                <strong>Decisión:</strong> Usé Express sin ORM para dominar SQL puro y conexión directa a PostgreSQL.
-            </p>
-            <div class="tech">
-                <span>Node.js</span> <span>Express</span> <span>PostgreSQL</span>
-            </div>
-            <div class="project-links">
-                <a href="https://github.com/mhdkon/todo-colores" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
-                <a href="https://api-colores-grnq.onrender.com" target="_blank" class="btn-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
-            </div>
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="seccion-sobre-mi">
+        <div class="contenido-sobre-mi">
+            <h2 class="titulo animado">Sobre mí</h2>
+            <p class="parrafo animado retraso-1">Soy un desarrollador web junior Full Stack con muchas ganas de crecer en este mundo del desarrollo. Me formé en un bootcamp intensivo donde adquirí sólidos conocimientos en desarrollo web moderno.</p>
+            <p class="parrafo animado retraso-2">Me encanta crear sitios web que funcionen bien y se vean atractivos. Disfruto mucho tanto del desarrollo frontend como del backend, y me apasiona aprender nuevas tecnologías constantemente.</p>
+            <p class="parrafo animado retraso-3">Fuera del desarrollo, me gusta jugar al fútbol en mi tiempo libre, algo que me ayuda a desconectar y mantener un buen equilibrio entre el trabajo y la vida personal.</p>
+            <h3 class="subtitulo animado retraso-4">Mi filosofía de trabajo</h3>
+            <p class="parrafo animado retraso-5">Creo en el código limpio, las buenas prácticas y el trabajo en equipo. Siempre estoy buscando mejorar mis habilidades y enfrentar nuevos desafíos que me ayuden a crecer como profesional.</p>
+            <p class="parrafo animado retraso-6">Además de JavaScript y Node.js, estoy aprendiendo Python y Django para crear aplicaciones web robustas y profesionales. Me interesa mucho trabajar con backend y construir APIs eficientes para proyectos futuros.</p>
+            <p class="parrafo animado retraso-7">También estoy familiarizado con CI/CD usando herramientas como GitHub Actions para automatizar pruebas y despliegues, asegurando que mis proyectos siempre estén actualizados y funcionando correctamente.</p>
         </div>
+    </section>
 
+    <!-- HABILIDADES -->
+    <section class="seccion-habilidades">
+        <h2 class="titulo-habilidades">Habilidades técnicas</h2>
+        <div class="contenedor-habilidades">
+            <div class="habilidad animada retraso-1"><span>HTML5</span></div>
+            <div class="habilidad animada retraso-2"><span>CSS3</span></div>
+            <div class="habilidad animada retraso-3"><span>JavaScript</span></div>
+            <div class="habilidad animada retraso-4"><span>React</span></div>
+            <div class="habilidad animada retraso-5"><span>Node.js & Express</span></div>
+            <div class="habilidad animada retraso-6"><span>MongoDB</span></div>
+            <div class="habilidad animada retraso-7"><span>PostgreSQL</span></div>
+            <div class="habilidad animada retraso-8"><span>TypeScript</span></div>
+            <div class="habilidad animada retraso-9"><span>Next.js</span></div>
+            <div class="habilidad animada retraso-10"><span>Git</span></div>
+            <div class="habilidad animada retraso-11"><span>JWT & Bcrypt</span></div>
+            <div class="habilidad animada retraso-12"><span>Responsive Design</span></div>
+            <div class="habilidad animada retraso-13"><span>AWS</span></div>
+            <div class="habilidad animada retraso-14"><span>Python</span></div>
+            <div class="habilidad animada retraso-15"><span>Django</span></div>
+            <div class="habilidad animada retraso-16"><span>CI/CD</span></div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <p class="seccion-descripcion">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        <form class="contact-form" action="https://formspree.io/f/tu-email-aqui" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <p class="contacto-directo">O contáctame directamente en:</p>
+        <div class="redes">
+            <a href="https://github.com/mhdkon" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tuemail@ejemplo.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <img src="" alt="Vista previa">
+            <h3></h3>
+            <a href="#" target="_blank" class="btn-ir">Ver proyecto</a>
+        </div>
     </div>
-</section>
-
-<!-- SOBRE MÍ MEJORADO -->
-<section id="sobre-mi" class="seccion-sobre-mi">
-    <div class="contenido-sobre-mi animado">
-        <h2 class="titulo">Sobre mí</h2>
-        <p class="parrafo animado retraso-1">
-            Soy desarrollador Full Stack autodidacta, con proyectos reales desplegados en la nube. Me especializo en React, Node.js y bases de datos relacionales. Me encanta crear aplicaciones completas, desde el diseño del frontend hasta la lógica del backend y la base de datos.
-        </p>
-        <p class="parrafo animado retraso-2">
-            Actualmente busco mi primera oportunidad como desarrollador junior para aportar mis habilidades en un equipo ágil y seguir creciendo profesionalmente. Estoy disponible para trabajar en Madrid o en remoto.
-        </p>
-        <h3 class="subtitulo animado retraso-3">¿Qué me define?</h3>
-        <p class="parrafo animado retraso-4"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Autodidacta y con muchas ganas de aprender cada día</p>
-        <p class="parrafo animado retraso-5"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Trabajo en equipo y comunicación efectiva</p>
-        <p class="parrafo animado retraso-6"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Resolución de problemas y atención al detalle</p>
-        <p class="parrafo animado retraso-7"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Pasión por el código limpio y las buenas prácticas</p>
-    </div>
-</section>
-
-<!-- HABILIDADES -->
-<section class="seccion-habilidades">
-    <h2 class="titulo-habilidades animado">Habilidades</h2>
-    <div class="contenedor-habilidades">
-        <div class="habilidad animado retraso-1"><i class="fas fa-code"></i><span>Frontend Development</span></div>
-        <div class="habilidad animado retraso-2"><i class="fas fa-server"></i><span>Backend Development</span></div>
-        <div class="habilidad animado retraso-3"><i class="fas fa-database"></i><span>Bases de Datos</span></div>
-        <div class="habilidad animado retraso-4"><i class="fas fa-cloud"></i><span>APIs REST</span></div>
-        <div class="habilidad animado retraso-5"><i class="fas fa-mobile-alt"></i><span>Responsive Design</span></div>
-        <div class="habilidad animado retraso-6"><i class="fas fa-git-alt"></i><span>Control de Versiones</span></div>
-    </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-final" style="text-align: center; padding: 4rem 5%;">
-    <h2 class="animado">¿Buscas un desarrollador junior?</h2>
-    <p class="animado retraso-1" style="color: var(--gray); margin: 2rem 0; font-size: 1.2rem;">
-        Estoy disponible para trabajar y seguir creciendo profesionalmente.
-    </p>
-    <a href="mailto:mhdkon01@gmail.com" class="cta-button animado retraso-2">
-        Contactar conmigo
-    </a>
-</section>
-
-<!-- CONTACTO CON FORMULARIO FUNCIONAL -->
-<section id="contacto" class="contact">
-    <h2 class="animado">Contacto</h2>
-    <!-- IMPORTANTE: Cambia 'mqkrjkzj' por tu ID real de Formspree -->
-    <form action="https://formspree.io/f/mqkrjkzj" method="POST" class="contact-form animado retraso-1">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-        <button type="submit"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
-    </form>
-    <div class="redes animado retraso-2">
-        <a href="https://github.com/mhdkon" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/mohamed-kone-542675229/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:mhdkon01@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="padding: 2rem; text-align: center;">
-    <p>Mohamed Kone - Full Stack Developer</p>
-</footer>
-
-<!-- MODAL (opcional, para proyectos) -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="cerrar">&times;</span>
-        <img src="" alt="Proyecto" id="modal-img">
-        <h3 id="modal-title"></h3>
-        <p id="modal-description"></p>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Menú hamburguesa
-        const barra = document.querySelector('.barra');
-        const nav = document.querySelector('.navegation');
-        if (barra) {
-            barra.addEventListener('click', function() {
-                this.classList.toggle('active');
-                nav.classList.toggle('active');
-            });
-        }
-
-        // Tema oscuro/claro
-        const themeToggle = document.querySelector('.theme-toggle');
-        const icon = themeToggle.querySelector('i');
-        themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
-            if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
-
-        // Header scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    });
-</script>
-
 </body>
 </html>
